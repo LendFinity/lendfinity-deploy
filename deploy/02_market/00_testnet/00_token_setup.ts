@@ -71,6 +71,8 @@ const func: DeployFunction = async function ({
     return;
   }
 
+  console.log("Reserve Symbols", reserveSymbols);
+
   // 0. Deployment of ERC20 mintable tokens for testing purposes
   await Bluebird.each(reserveSymbols, async (symbol) => {
     if (!reservesConfig[symbol]) {

@@ -11,6 +11,7 @@ export enum eTenderly {
 export type eNetwork =
   | eBitfinityNetwork
   | eEthereumNetwork
+  | eBitfinityNetwork
   | ePolygonNetwork
   | eXDaiNetwork
   | eAvalancheNetwork
@@ -49,6 +50,10 @@ export enum eEthereumNetwork {
   rinkeby = "rinkeby",
   goerli = "goerli",
   sepolia = "sepolia",
+}
+
+export enum eBitfinityNetwork {
+  bitfinity = "bitfinity",
 }
 
 export enum eBaseNetwork {
@@ -357,6 +362,7 @@ export enum TokenContractId {
   ZRX = "ZRX",
   MKR = "MKR",
   WBTC = "WBTC",
+  WBFT = "WBFT",
   LINK = "LINK",
   KNC = "KNC",
   MANA = "MANA",
@@ -452,6 +458,10 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.ropsten]: T;
   [eEthereumNetwork.main]: T;
   [eEthereumNetwork.tenderly]: T;
+}
+
+export interface iBitfinityParamsPerNetwork<T> {
+  [eBitfinityNetwork.bitfinity]: T;
 }
 
 export interface iPolygonParamsPerNetwork<T> {

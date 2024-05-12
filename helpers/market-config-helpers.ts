@@ -14,6 +14,8 @@ import {
 } from "./types";
 import BitfinityMarket from "../markets/bitfinity";
 import AaveMarket from "../markets/aave";
+import BitfinityMarket from "../markets/bitfinity";
+
 import EthereumV3Config from "../markets/ethereum";
 import AaveTestMarket from "../markets/test";
 import HarmonyMarket from "../markets/harmony";
@@ -44,6 +46,7 @@ export enum ConfigNames {
   Bitfinity = "Bitfinity",
   Commons = "Commons",
   Aave = "Aave",
+  Bitfinity = "Bitfinity",
   Test = "Test",
   Harmony = "Harmony",
   Avalanche = "Avalanche",
@@ -105,6 +108,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
       return BitfinityMarket;
     case ConfigNames.Aave:
       return AaveMarket;
+    case ConfigNames.Bitfinity:
+      return BitfinityMarket;
     case ConfigNames.Test:
       return AaveTestMarket;
     case ConfigNames.Harmony:
@@ -183,10 +188,13 @@ export const getReserveAddresses = async (
   network: eNetwork
 ) => {
   const isLive = hre.config.networks[network].live;
+  console.log("logging stufgf i guess", isLive, poolConfig.TestnetMarket, poolConfig.ReserveAssets);
+
+  // already deployed token addresses
+  let finalReserveAddresses = getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {};
 
   if (isLive && !poolConfig.TestnetMarket) {
     console.log("[NOTICE] Using ReserveAssets from configuration file");
-
     return (
       getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {}
     );
@@ -194,6 +202,7 @@ export const getReserveAddresses = async (
   console.log(
     "[WARNING] Using deployed Testnet tokens instead of ReserveAssets from configuration file"
   );
+
   const reservesKeys = Object.keys(poolConfig.ReservesConfig);
   const allDeployments = await hre.deployments.all();
   const testnetTokenKeys = Object.keys(allDeployments).filter(
@@ -201,11 +210,20 @@ export const getReserveAddresses = async (
       key.includes(TESTNET_TOKEN_PREFIX) &&
       reservesKeys.includes(key.replace(TESTNET_TOKEN_PREFIX, ""))
   );
-  return testnetTokenKeys.reduce<ITokenAddress>((acc, key) => {
+
+  // testing tokens that we deploy
+  const testnetTokenAddresses = testnetTokenKeys.reduce<ITokenAddress>((acc, key) => {
     const symbol = key.replace(TESTNET_TOKEN_PREFIX, "");
     acc[symbol] = allDeployments[key].address;
     return acc;
   }, {});
+
+  console.log("prefinal addresses - ", testnetTokenAddresses, finalReserveAddresses)
+
+  finalReserveAddresses = { ...testnetTokenAddresses, ... finalReserveAddresses };
+
+  console.log("finalReserveAddresses - ", finalReserveAddresses)
+  return finalReserveAddresses;
 };
 
 export const getSubTokensByPrefix = async (

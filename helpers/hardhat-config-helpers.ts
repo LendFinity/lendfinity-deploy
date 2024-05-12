@@ -96,6 +96,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eEthereumNetwork.sepolia]: `https://eth-sepolia.g.alchemy.com/v2/${getAlchemyKey(
     eEthereumNetwork.sepolia
   )}`,
+  [eBitfinityNetwork.bitfinity]: `https://testnet.bitfinity.network/`,
   [eArbitrumNetwork.goerliNitro]: `https://goerli-rollup.arbitrum.io/rpc`,
   [eBaseNetwork.baseGoerli]: `https://goerli.base.org`,
   [eBaseNetwork.base]: `https://base-mainnet.g.alchemy.com/v2/${getAlchemyKey(

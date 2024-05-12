@@ -20,7 +20,7 @@ const func: DeployFunction = async function ({
   const poolConfig = loadPoolConfig(MARKET_NAME);
 
   console.log("- Enable stable borrow in selected assets");
-  await hre.run("review-stable-borrow", { fix: true, vvv: true });
+  await hre.run("review-stable-borrow", { fix: false, vvv: true, checkOnly: "ckBTC, ICP, ckUSDC, WBFT"});
 
   console.log("- Review rate strategies");
   await hre.run("review-rate-strategies");
@@ -29,7 +29,7 @@ const func: DeployFunction = async function ({
   await hre.run("setup-debt-ceiling");
 
   console.log("- Setup Borrowable assets in Isolation Mode");
-  await hre.run("setup-isolation-mode");
+  //await hre.run("setup-isolation-mode");
 
   console.log("- Setup E-Modes");
   await hre.run("setup-e-modes");
@@ -39,10 +39,11 @@ const func: DeployFunction = async function ({
 
   if (isTestnetMarket(poolConfig)) {
     // Disable faucet minting and borrowing of wrapped native token
-    await hre.run("disable-faucet-native-testnets");
-    console.log("- Minting and borrowing of wrapped native token disabled");
+    //await hre.run("disable-faucet-native-testnets");
+    //console.log("- Minting and borrowing of wrapped native token disabled");
 
     // Unpause pool
+    console.log("- Unpausing pool")
     const poolConfigurator = await getPoolConfiguratorProxy();
     await waitForTx(await poolConfigurator.setPoolPause(false));
     console.log("- Pool unpaused and accepting deposits.");
