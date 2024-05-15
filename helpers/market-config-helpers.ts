@@ -189,11 +189,9 @@ export const getReserveAddresses = async (
 ) => {
   const isLive = hre.config.networks[network].live;
 
-  // already deployed token addresses
-  let finalReserveAddresses = getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {};
-
   if (isLive && !poolConfig.TestnetMarket) {
     console.log("[NOTICE] Using ReserveAssets from configuration file");
+
     return (
       getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {}
     );
@@ -209,16 +207,12 @@ export const getReserveAddresses = async (
       reservesKeys.includes(key.replace(TESTNET_TOKEN_PREFIX, ""))
   );
 
-  // testing tokens that we deploy
-  const testnetTokenAddresses = testnetTokenKeys.reduce<ITokenAddress>((acc, key) => {
+  return testnetTokenKeys.reduce<ITokenAddress>((acc, key) => {
     const symbol = key.replace(TESTNET_TOKEN_PREFIX, "");
     acc[symbol] = allDeployments[key].address;
     return acc;
   }, {});
 
-  finalReserveAddresses = { ...testnetTokenAddresses, ... finalReserveAddresses };
-
-  return finalReserveAddresses;
 };
 
 export const getSubTokensByPrefix = async (
