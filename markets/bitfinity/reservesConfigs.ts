@@ -165,3 +165,39 @@ export const strategyINT: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+
+export const strategyFNS: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "1100",
+  liquidationThreshold: "3700",
+  liquidationBonus: "10300",
+  liquidationProtocolFee: "300",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1100",
+  supplyCap: "0",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const strategytUSDT: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "1100",
+  liquidationThreshold: "3700",
+  liquidationBonus: "10300",
+  liquidationProtocolFee: "300",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1100",
+  supplyCap: "0",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
