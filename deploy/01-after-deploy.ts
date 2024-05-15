@@ -43,7 +43,6 @@ const func: DeployFunction = async function ({
     //console.log("- Minting and borrowing of wrapped native token disabled");
 
     // Unpause pool
-    console.log("- Unpausing pool")
     const poolConfigurator = await getPoolConfiguratorProxy();
     await waitForTx(await poolConfigurator.setPoolPause(false));
     console.log("- Pool unpaused and accepting deposits.");

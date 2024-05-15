@@ -188,7 +188,6 @@ export const getReserveAddresses = async (
   network: eNetwork
 ) => {
   const isLive = hre.config.networks[network].live;
-  console.log("logging stufgf i guess", isLive, poolConfig.TestnetMarket, poolConfig.ReserveAssets);
 
   // already deployed token addresses
   let finalReserveAddresses = getParamPerNetwork<ITokenAddress>(poolConfig.ReserveAssets, network) || {};
@@ -202,7 +201,6 @@ export const getReserveAddresses = async (
   console.log(
     "[WARNING] Using deployed Testnet tokens instead of ReserveAssets from configuration file"
   );
-
   const reservesKeys = Object.keys(poolConfig.ReservesConfig);
   const allDeployments = await hre.deployments.all();
   const testnetTokenKeys = Object.keys(allDeployments).filter(
@@ -218,11 +216,8 @@ export const getReserveAddresses = async (
     return acc;
   }, {});
 
-  console.log("prefinal addresses - ", testnetTokenAddresses, finalReserveAddresses)
-
   finalReserveAddresses = { ...testnetTokenAddresses, ... finalReserveAddresses };
 
-  console.log("finalReserveAddresses - ", finalReserveAddresses)
   return finalReserveAddresses;
 };
 

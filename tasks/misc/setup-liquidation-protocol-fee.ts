@@ -22,15 +22,11 @@ task(
 
   let assetsWithProtocolFees = [];
 
-  console.log("reserves",config.ReservesConfig);
   for (let asset in config.ReservesConfig) {
-    console.log("asset",asset);
     const liquidationProtocolFee = BigNumber.from(
       config.ReservesConfig[asset].liquidationProtocolFee
     );
     const assetAddress = await getReserveAddress(config, asset);
-
-    console.log("address",assetAddress);
 
     if (liquidationProtocolFee && liquidationProtocolFee.gt("0")) {
       // await waitForTx(
