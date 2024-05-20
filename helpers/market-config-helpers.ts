@@ -257,16 +257,16 @@ export const getChainlinkOracles = async (
   network: eNetwork
 ) => {
   const isLive = hre.config.networks[network].live;
-  if (isLive) {
-    console.log("[NOTICE] Using ChainlinkAggregator from configuration file");
+  // if (isLive) {
+  //   console.log("[NOTICE] Using ChainlinkAggregator from configuration file");
 
-    return (
-      getParamPerNetwork<ITokenAddress>(
-        poolConfig.ChainlinkAggregator,
-        network
-      ) || {}
-    );
-  }
+  //   return (
+  //     getParamPerNetwork<ITokenAddress>(
+  //       poolConfig.ChainlinkAggregator,
+  //       network
+  //     ) || {}
+  //   );
+  // }
   console.log(
     "[WARNING] Using deployed Mock Price Aggregators instead of ChainlinkAggregator from configuration file"
   );

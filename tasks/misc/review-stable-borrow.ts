@@ -73,6 +73,7 @@ task(`review-stable-borrow`, ``)
           "------------\n",
           poolConfig
         );
+        console.log("  - Token Address:", tokenAddress);
         const expectedStableRateEnabled =
           poolConfig.ReservesConfig[normalizedSymbol.toUpperCase()]
             .stableBorrowRateEnabled;

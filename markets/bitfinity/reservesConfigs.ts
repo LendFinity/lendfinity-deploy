@@ -184,7 +184,7 @@ export const strategyFNS: IReserveParams = {
   borrowableIsolation: false,
 };
 
-export const strategytUSDT: IReserveParams = {
+export const strategyTUSDT: IReserveParams = {
   strategy: rateStrategyVolatileOne,
   baseLTVAsCollateral: "1100",
   liquidationThreshold: "3700",
