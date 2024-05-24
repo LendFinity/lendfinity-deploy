@@ -3,7 +3,6 @@ import {
   eArbitrumNetwork,
   eAvalancheNetwork,
   eBaseNetwork,
-  eBitfinityNetwork,
   eEthereumNetwork,
   eFantomNetwork,
   eHarmonyNetwork,
