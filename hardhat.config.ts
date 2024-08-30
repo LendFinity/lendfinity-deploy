@@ -15,6 +15,7 @@ import {
   eOptimismNetwork,
   ePolygonNetwork,
   eBaseNetwork,
+  eBitfinityNetwork,
 } from "./helpers/types";
 import { DEFAULT_NAMED_ACCOUNTS } from "./helpers/constants";
 
@@ -71,6 +72,14 @@ export default {
     kovan: getCommonNetworkConfig(eEthereumNetwork.kovan, 42),
     rinkeby: getCommonNetworkConfig(eEthereumNetwork.rinkeby, 4),
     ropsten: getCommonNetworkConfig(eEthereumNetwork.ropsten, 3),
+    [eBitfinityNetwork.main]: getCommonNetworkConfig(
+      eBitfinityNetwork.main,
+      355110
+    ),
+    [eBitfinityNetwork.testnet]: getCommonNetworkConfig(
+      eBitfinityNetwork.testnet,
+      355113
+    ),
     [ePolygonNetwork.polygon]: getCommonNetworkConfig(
       ePolygonNetwork.polygon,
       137
@@ -207,14 +216,25 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
-    apiKey: ETHERSCAN_KEY,
+    apiKey: {
+      [eBitfinityNetwork.testnet]: "0x",
+      [eBitfinityNetwork.main]: "0x",
+    },
     customChains: [
       {
-        network: eBaseNetwork.base,
-        chainId: 8453,
+        network: eBitfinityNetwork.testnet,
+        chainId: 355113,
         urls: {
-          apiURL: "https://api.basescan.org/api",
-          browserURL: "https://basescan.org/",
+          apiURL: "https://explorer.testnet.bitfinity.network/api",
+          browserURL: "https://explorer.testnet.bitfinity.network/",
+        },
+      },
+      {
+        network: eBitfinityNetwork.main,
+        chainId: 355110,
+        urls: {
+          apiURL: "https://explorer.testnet.bitfinity.network/api",
+          browserURL: "https://explorer.testnet.bitfinity.network/",
         },
       },
     ],

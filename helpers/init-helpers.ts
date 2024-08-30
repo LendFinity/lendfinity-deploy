@@ -381,7 +381,7 @@ export const configureReservesByHelper = async (
     );
 
     // Deploy init per chunks
-    const enableChunks = 20;
+    const enableChunks = 1;
     const chunkedSymbols = chunk(symbols, enableChunks);
     const chunkedInputParams = chunk(inputParams, enableChunks);
     const poolConfiguratorAddress = await addressProvider.getPoolConfigurator();

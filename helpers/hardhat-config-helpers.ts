@@ -12,6 +12,7 @@ import {
   eFantomNetwork,
   eOptimismNetwork,
   eBaseNetwork,
+  eBitfinityNetwork,
 } from "./types";
 
 require("dotenv").config();
@@ -56,6 +57,8 @@ export const getAlchemyKey = (net: eNetwork) => {
 };
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
+  [eBitfinityNetwork.main]: `https://mainnet.bitfinity.network/`,
+  [eBitfinityNetwork.testnet]: `https://testnet.bitfinity.network/`,
   [eEthereumNetwork.kovan]: `https://eth-kovan.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.kovan
   )}`,
@@ -101,6 +104,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
+  [eBitfinityNetwork.testnet]: true,
   [eEthereumNetwork.main]: true,
   [ePolygonNetwork.polygon]: true,
   [eArbitrumNetwork.arbitrum]: true,

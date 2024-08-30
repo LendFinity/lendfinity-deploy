@@ -9,6 +9,7 @@ export enum eTenderly {
 }
 
 export type eNetwork =
+  | eBitfinityNetwork
   | eEthereumNetwork
   | ePolygonNetwork
   | eXDaiNetwork
@@ -21,6 +22,11 @@ export type eNetwork =
   | eBaseNetwork;
 
 type eTenderlyNetwork = "tenderly";
+
+export enum eBitfinityNetwork {
+  main = "bitfinity",
+  testnet = "bitfinity-testnet",
+}
 
 export enum eFantomNetwork {
   main = "fantom",

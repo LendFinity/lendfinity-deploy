@@ -12,6 +12,7 @@ import {
   SubTokenOutput,
   AssetType,
 } from "./types";
+import BitfinityMarket from "../markets/bitfinity";
 import AaveMarket from "../markets/aave";
 import EthereumV3Config from "../markets/ethereum";
 import AaveTestMarket from "../markets/test";
@@ -40,6 +41,7 @@ import { ENABLE_REWARDS } from "./env";
 declare var hre: HardhatRuntimeEnvironment;
 
 export enum ConfigNames {
+  Bitfinity = "Bitfinity",
   Commons = "Commons",
   Aave = "Aave",
   Test = "Test",
@@ -99,6 +101,8 @@ export const getAddressFromConfig = (
 
 export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
   switch (configName) {
+    case ConfigNames.Bitfinity:
+      return BitfinityMarket;
     case ConfigNames.Aave:
       return AaveMarket;
     case ConfigNames.Test:

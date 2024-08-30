@@ -8,6 +8,7 @@ import {
   eHarmonyNetwork,
   eOptimismNetwork,
   ePolygonNetwork,
+  eBitfinityNetwork,
 } from "./types";
 
 const {
@@ -36,6 +37,7 @@ export const ONE_ADDRESS = "0x0000000000000000000000000000000000000001";
 export const AAVE_REFERRAL = "0";
 
 export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
+  [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
   [eEthereumNetwork.kovan]: ZERO_ADDRESS,
   [eEthereumNetwork.main]: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
   [eArbitrumNetwork.arbitrum]: "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
@@ -77,6 +79,17 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
+  // bitfinity
+  BFT: parseUnits("0.7", 18).toString(),
+  WBFT: parseUnits("0.7", 18).toString(),
+  CAL: parseUnits("153780", 18).toString(),
+  CHAP: parseUnits("0.085", 18).toString(),
+  COD: parseUnits("83845", 18).toString(),
+  CVA: parseUnits("76251", 18).toString(),
+  CYN: parseUnits("153637", 18).toString(),
+  FNS: parseUnits("19", 18).toString(),
+  INT: parseUnits("119086", 18).toString(),
+  TUSDT: parseUnits("1", 18).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
@@ -100,6 +113,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -123,6 +137,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -142,6 +157,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eBaseNetwork.base]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eBaseNetwork.baseGoerli]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
+  [eBitfinityNetwork.testnet]: ZERO_ADDRESS,
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
