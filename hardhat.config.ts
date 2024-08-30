@@ -243,4 +243,7 @@ export default {
       },
     ],
   },
+  sourcify: {
+    enabled: false
+  }
 };
