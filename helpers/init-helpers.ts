@@ -385,7 +385,7 @@ export const configureReservesByHelper = async (
     const chunkedSymbols = chunk(symbols, enableChunks);
     const chunkedInputParams = chunk(inputParams, enableChunks);
     const poolConfiguratorAddress = await addressProvider.getPoolConfigurator();
-    
+
     console.log(`- Configure reserves in ${chunkedInputParams.length} txs`);
     for (
       let chunkIndex = 0;

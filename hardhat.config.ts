@@ -25,6 +25,7 @@ import "hardhat-contract-sizer";
 import "hardhat-dependency-compiler";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@nomiclabs/hardhat-etherscan";
+import "dotenv";
 
 const SKIP_LOAD = process.env.SKIP_LOAD === "true";
 const TASK_FOLDERS = ["misc", "market-registry"];
@@ -244,6 +245,6 @@ export default {
     ],
   },
   sourcify: {
-    enabled: false
-  }
+    enabled: false,
+  },
 };

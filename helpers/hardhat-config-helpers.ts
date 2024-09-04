@@ -173,6 +173,8 @@ const MNEMONICS: iParamsPerNetwork<string> = {
   [eArbitrumNetwork.arbitrumTestnet]: process.env.ARBITRUM_MNEMONIC,
   [ePolygonNetwork.mumbai]: process.env.POLYGON_MUMBAI_MNEMONIC,
   [ePolygonNetwork.polygon]: process.env.POLYGON_MNEMONIC,
+  [eBitfinityNetwork.bitfinity]:
+    "test test test test test test test test test test test junk",
 };
 
 export const hardhatNetworkSettings = {
