@@ -128,10 +128,10 @@ export default {
       eEthereumNetwork.sepolia,
       11155111
     ),
-    [eBitfinityNetwork.bitfinity]: getCommonNetworkConfig(
-      eBitfinityNetwork.bitfinity,
-      355113
-    ),
+    // [eBitfinityNetwork.bitfinity]: getCommonNetworkConfig(
+    //   eBitfinityNetwork.bitfinity,
+    //   355113
+    // ),
     [eArbitrumNetwork.goerliNitro]: getCommonNetworkConfig(
       eArbitrumNetwork.goerliNitro,
       421613
