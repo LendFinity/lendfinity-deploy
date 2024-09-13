@@ -217,13 +217,17 @@ export const initReservesByHelper = async (
   console.log(
     `- Reserves initialization in ${chunkedInitInputParams.length} txs`
   );
+
+  const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
+  const gasLimit = 800000;
+
   for (
     let chunkIndex = 0;
     chunkIndex < chunkedInitInputParams.length;
     chunkIndex++
   ) {
     const tx = await waitForTx(
-      await configurator.initReserves(chunkedInitInputParams[chunkIndex])
+      await configurator.initReserves(chunkedInitInputParams[chunkIndex], { gasLimit, gasPrice })
     );
 
     console.log(
@@ -265,7 +269,11 @@ export const configureReservesByHelper = async (
   reservesParams: iMultiPoolsAssets<IReserveParams>,
   tokenAddresses: { [symbol: string]: tEthereumAddress }
 ) => {
+  const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
+  const gasLimit = 5000000;
+
   const { deployer } = await hre.getNamedAccounts();
+
   const addressProviderArtifact = await hre.deployments.get(
     POOL_ADDRESSES_PROVIDER_ID
   );
@@ -351,6 +359,7 @@ export const configureReservesByHelper = async (
       );
       continue;
     }
+
     // Push data
 
     inputParams.push({
@@ -377,7 +386,7 @@ export const configureReservesByHelper = async (
     await waitForTx(
       await aclManager
         .connect(aclAdmin)
-        .addRiskAdmin(reservesSetupHelper.address)
+        .addRiskAdmin(reservesSetupHelper.address, { gasLimit, gasPrice })
     );
 
     // Deploy init per chunks
@@ -395,7 +404,7 @@ export const configureReservesByHelper = async (
       const tx = await waitForTx(
         await reservesSetupHelper.configureReserves(
           poolConfiguratorAddress,
-          chunkedInputParams[chunkIndex]
+          chunkedInputParams[chunkIndex], { gasLimit, gasPrice }
         )
       );
       console.log(
@@ -407,7 +416,7 @@ export const configureReservesByHelper = async (
     await waitForTx(
       await aclManager
         .connect(aclAdmin)
-        .removeRiskAdmin(reservesSetupHelper.address)
+        .removeRiskAdmin(reservesSetupHelper.address, { gasLimit, gasPrice })
     );
   }
 };

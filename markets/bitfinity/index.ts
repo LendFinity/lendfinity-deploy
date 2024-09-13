@@ -10,6 +10,7 @@ import {
   strategyCYN,
   strategyFNS,
   strategyTUSDT,
+  strategyEFG,
 } from "./reservesConfigs";
 
 export const BitfinityMarket: IAaveConfiguration = {
@@ -21,7 +22,7 @@ export const BitfinityMarket: IAaveConfiguration = {
   StableDebtTokenNamePrefix: "Bitfinity",
   VariableDebtTokenNamePrefix: "Bitfinity",
   SymbolPrefix: "Bft",
-  ReservesConfig: {
+  ReservesConfig: { 
     WBFT: strategyWBFT,
     CHAP: strategyCHAP,
     INT: strategyINT,
@@ -31,11 +32,13 @@ export const BitfinityMarket: IAaveConfiguration = {
     CYN: strategyCYN,
     FNS: strategyFNS,
     TUSDT: strategyTUSDT,
+    EFG: strategyEFG,
   },
   ReserveAssets: {
-    [eBitfinityNetwork.testnet]: {
-      CHAP: "0x9581aa53E089F4E8f0B3c566f00121DF7c83c83B",
+    [eBitfinityNetwork.bitfinity]: {
+      EFG: "0xb7FBeB1d175C05b30FB45c57cA4B272767C1C65C",
       WBFT: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
+      CHAP: "0x9581aa53E089F4E8f0B3c566f00121DF7c83c83B",
       COD: "0xc489778CD7DB9427a730F30BD66a57762DE96628",
       CVA: "0x42AbC7B10224E2e7Ea721FC5e002BAe561BA6659",
       CYN: "0x1bBB2533Dcd95D7E347bC278c5b6398b5f7c83EC",

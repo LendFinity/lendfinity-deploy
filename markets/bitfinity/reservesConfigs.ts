@@ -58,6 +58,24 @@ export const strategyCAL: IReserveParams = {
   borrowableIsolation: false,
 };
 
+export const strategyEFG: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "1500",
+  liquidationThreshold: "3000",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "500",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1500",
+  supplyCap: "0",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+}
+
 export const strategyCOD: IReserveParams = {
   strategy: rateStrategyVolatileOne,
   baseLTVAsCollateral: "5000",

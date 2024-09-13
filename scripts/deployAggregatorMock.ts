@@ -4,8 +4,7 @@ import hre from 'hardhat';
 
 
 const user: string = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266';
- 
-// Mint 5 tokens to the recipient address
+
 async function mintTokens(): Promise<void> {
 
     let provider = new ethers.providers.JsonRpcProvider("https://testnet.bitfinity.network/");

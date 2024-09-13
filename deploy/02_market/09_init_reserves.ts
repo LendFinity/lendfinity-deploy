@@ -47,6 +47,9 @@ const func: DeployFunction = async function ({
     RateStrategies,
   } = poolConfig;
 
+  const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
+  const gasLimit = 800000;
+
   // Deploy Rate Strategies
   for (const strategy in RateStrategies) {
     const strategyData = RateStrategies[strategy];
@@ -66,7 +69,9 @@ const func: DeployFunction = async function ({
       from: deployer,
       args: args,
       contract: "DefaultReserveInterestRateStrategy",
-      log: true,
+      log: true, 
+      gasLimit, 
+      gasPrice
     });
   }
 

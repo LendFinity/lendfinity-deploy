@@ -80,17 +80,17 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
-  // bitfinity
-  BFT: parseUnits("0.7", 18).toString(),
-  WBFT: parseUnits("0.7", 18).toString(),
-  CAL: parseUnits("153780", 18).toString(),
-  CHAP: parseUnits("0.085", 18).toString(),
-  COD: parseUnits("83845", 18).toString(),
-  CVA: parseUnits("76251", 18).toString(),
-  CYN: parseUnits("153637", 18).toString(),
-  FNS: parseUnits("19", 18).toString(),
-  INT: parseUnits("119086", 18).toString(),
-  TUSDT: parseUnits("1", 18).toString(),
+
+  WBFT: parseUnits("90", 8).toString(),
+  CHAP: parseUnits("2", 8).toString(),
+  INT: parseUnits("3", 8).toString(),
+  COD: parseUnits("4", 8).toString(),
+  CAL: parseUnits("5", 8).toString(),
+  CVA: parseUnits("6", 8).toString(),
+  CYN: parseUnits("7", 8).toString(),
+  FNS: parseUnits("8", 8).toString(),
+  TUSDT: parseUnits("1", 8).toString(),
+  EFG: parseUnits("1", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
