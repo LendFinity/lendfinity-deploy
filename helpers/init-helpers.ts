@@ -218,8 +218,8 @@ export const initReservesByHelper = async (
     `- Reserves initialization in ${chunkedInitInputParams.length} txs`
   );
 
-  const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
-  const gasLimit = 800000;
+  // const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
+  // const gasLimit = 800000;
 
   for (
     let chunkIndex = 0;
@@ -227,7 +227,7 @@ export const initReservesByHelper = async (
     chunkIndex++
   ) {
     const tx = await waitForTx(
-      await configurator.initReserves(chunkedInitInputParams[chunkIndex], { gasLimit, gasPrice })
+      await configurator.initReserves(chunkedInitInputParams[chunkIndex])
     );
 
     console.log(

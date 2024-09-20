@@ -37,7 +37,6 @@ export const ONE_ADDRESS = "0x0000000000000000000000000000000000000001";
 export const AAVE_REFERRAL = "0";
 
 export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
-  [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
   [eEthereumNetwork.kovan]: ZERO_ADDRESS,
   [eEthereumNetwork.main]: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
   [eArbitrumNetwork.arbitrum]: "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
@@ -48,7 +47,8 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
-  [eBitfinityNetwork.bitfinity]: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
+  [eBitfinityNetwork.main]: "", // TODO: Add wrapped native token address
+  [eBitfinityNetwork.testnet]: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
 };
 
 export const ZERO_BYTES_32 =
@@ -191,10 +191,10 @@ export const DEFAULT_NAMED_ACCOUNTS = {
     default: 0,
   },
   treasuryProxyAdmin: {
-    default: 1,
+    default: 0,
   },
   incentivesProxyAdmin: {
-    default: 1,
+    default: 0,
   },
   incentivesEmissionManager: {
     default: 0,

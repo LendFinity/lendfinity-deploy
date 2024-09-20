@@ -17,8 +17,12 @@ import {
 
 require("dotenv").config();
 
-export const DEFAULT_BLOCK_GAS_LIMIT = 12450000;
-export const DEFAULT_GAS_PRICE = 8000000000;
+
+  // const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
+  // const gasLimit = 800000;
+
+export const DEFAULT_BLOCK_GAS_LIMIT = 800000;
+export const DEFAULT_GAS_PRICE = 30000000000;
 export const INFURA_KEY = process.env.INFURA_KEY || "";
 export const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
 export const TENDERLY_FORK_ID = process.env.TENDERLY_FORK_ID || "";

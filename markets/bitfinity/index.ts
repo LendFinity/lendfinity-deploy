@@ -33,6 +33,7 @@ export const BitfinityMarket: IAaveConfiguration = {
     FNS: strategyFNS,
     TUSDT: strategyTUSDT,
     EFG: strategyEFG,
+    MNX: strategyEFG,
   },
   ReserveAssets: {
     [eBitfinityNetwork.main]: {
@@ -52,6 +53,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       FNS: "0xD89E302C8ac7AbAa4eC6016961e04692cccb6039",
       INT: "0xa9449C8E42D5D49a2B5031A843747B342816dC13",
       TUSDT: "0xbd9A5c1d9fBbBEC84633ec9Cb046C01fB79809f2",
+      MNX: "0x1Be94873D881ABC9c45Be654e3491728292ff8C7",
     },
   },
   EModes: {
@@ -81,6 +83,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       FNS: "0x8F1A47187e07f3fadC561f40f82eb4FE20468bb8",
       INT: "0x8fB5F54dAEB90e124D3EDc0Ba3132Fe03af0a0De",
       EFG: "0xA10e1eCBC6Bd1DcE07C0189D9461C84E1BFfA55E",
+      MNX: "0xA10e1eCBC6Bd1DcE07C0189D9461C84E1BFfA55E"
     },
   },
 };
