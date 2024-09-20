@@ -22,7 +22,7 @@ export const BitfinityMarket: IAaveConfiguration = {
   StableDebtTokenNamePrefix: "Bitfinity",
   VariableDebtTokenNamePrefix: "Bitfinity",
   SymbolPrefix: "Bft",
-  ReservesConfig: { 
+  ReservesConfig: {
     WBFT: strategyWBFT,
     CHAP: strategyCHAP,
     INT: strategyINT,
@@ -35,7 +35,13 @@ export const BitfinityMarket: IAaveConfiguration = {
     EFG: strategyEFG,
   },
   ReserveAssets: {
-    [eBitfinityNetwork.bitfinity]: {
+    [eBitfinityNetwork.main]: {
+      WBFT: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
+      CKBTC: "0x56bF74Ef5d4aD161D2D8D5d576E70108F152Cd35",
+      CKUSDC: "0x3662AFEF38c94a6184CDFCE8DCC60E7C305b8299",
+      ICP: "0x51cCdE9Ca75d95BB55eCe1775fCBFF91324B18A6",
+    },
+    [eBitfinityNetwork.testnet]: {
       EFG: "0xb7FBeB1d175C05b30FB45c57cA4B272767C1C65C",
       WBFT: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
       CHAP: "0x9581aa53E089F4E8f0B3c566f00121DF7c83c83B",
@@ -59,6 +65,12 @@ export const BitfinityMarket: IAaveConfiguration = {
     },
   },
   ChainlinkAggregator: {
+    [eBitfinityNetwork.main]: {
+      WBFT: "",
+      CKBTC: "",
+      CKUSDC: "",
+      ICP: "",
+    },
     [eBitfinityNetwork.testnet]: {
       CHAP: "0xcFe2E020E3e4DC28Ee29A601CbE7551364fC7AD4",
       WBFT: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
@@ -68,6 +80,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       CYN: "0x6865D26541F3582028C6596194bBBE77aD296847",
       FNS: "0x8F1A47187e07f3fadC561f40f82eb4FE20468bb8",
       INT: "0x8fB5F54dAEB90e124D3EDc0Ba3132Fe03af0a0De",
+      EFG: "0xA10e1eCBC6Bd1DcE07C0189D9461C84E1BFfA55E",
     },
   },
 };

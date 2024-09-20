@@ -27,7 +27,7 @@ const func: DeployFunction = async function ({
   const network = (
     process.env.FORK ? process.env.FORK : hre.network.name
   ) as eNetwork;
-
+    
   const { address: addressesProviderAddress } = await deployments.get(
     POOL_ADDRESSES_PROVIDER_ID
   );
