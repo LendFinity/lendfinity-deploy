@@ -28,3 +28,10 @@ async function main() {
 
   console.log("Function called, result:", tx);
 }
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
