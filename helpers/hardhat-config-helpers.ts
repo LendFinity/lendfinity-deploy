@@ -21,8 +21,10 @@ require("dotenv").config();
   // const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
   // const gasLimit = 800000;
 
-export const DEFAULT_BLOCK_GAS_LIMIT = 800000;
-export const DEFAULT_GAS_PRICE = 30000000000;
+// export const DEFAULT_BLOCK_GAS_LIMIT = 800000;
+// export const DEFAULT_GAS_PRICE = 30000000000;
+export const DEFAULT_BLOCK_GAS_LIMIT = 12450000;
+export const DEFAULT_GAS_PRICE = 8000000000;
 export const INFURA_KEY = process.env.INFURA_KEY || "";
 export const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
 export const TENDERLY_FORK_ID = process.env.TENDERLY_FORK_ID || "";
@@ -117,12 +119,14 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eFantomNetwork.main]: true,
   [eOptimismNetwork.main]: true,
   [eBaseNetwork.base]: true,
-  [eBitfinityNetwork.bitfinity]: true,
+  [eBitfinityNetwork.main]: true,
 };
 
 const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {
   [eArbitrumNetwork.goerliNitro]: 100000001,
   [eBaseNetwork.baseGoerli]: 8000000000,
+  // [eBitfinityNetwork.main]: 8000000000,
+  [eBitfinityNetwork.main]: 80000,
 };
 
 export const buildForkConfig = ():
@@ -176,6 +180,7 @@ const MNEMONICS: iParamsPerNetwork<string> = {
   [eArbitrumNetwork.arbitrumTestnet]: process.env.ARBITRUM_MNEMONIC,
   [ePolygonNetwork.mumbai]: process.env.POLYGON_MUMBAI_MNEMONIC,
   [ePolygonNetwork.polygon]: process.env.POLYGON_MNEMONIC,
+  [eBitfinityNetwork.main]: process.env.MNEMONIC,
   [eBitfinityNetwork.testnet]:
     "test test test test test test test test test test test junk",
 };

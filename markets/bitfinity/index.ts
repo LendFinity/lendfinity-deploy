@@ -24,23 +24,23 @@ export const BitfinityMarket: IAaveConfiguration = {
   SymbolPrefix: "Bft",
   ReservesConfig: {
     WBFT: strategyWBFT,
-    CHAP: strategyCHAP,
-    INT: strategyINT,
-    COD: strategyCOD,
-    CAL: strategyCAL,
-    CVA: strategyCVA,
-    CYN: strategyCYN,
-    FNS: strategyFNS,
-    TUSDT: strategyTUSDT,
-    EFG: strategyEFG,
-    MNX: strategyEFG,
+    // CHAP: strategyCHAP,
+    // INT: strategyINT,
+    // COD: strategyCOD,
+    // CAL: strategyCAL,
+    // CVA: strategyCVA,
+    // CYN: strategyCYN,
+    // FNS: strategyFNS,
+    // TUSDT: strategyTUSDT,
+    // EFG: strategyEFG,
+    // MNX: strategyEFG,
   },
   ReserveAssets: {
     [eBitfinityNetwork.main]: {
-      WBFT: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
-      CKBTC: "0x56bF74Ef5d4aD161D2D8D5d576E70108F152Cd35",
-      CKUSDC: "0x3662AFEF38c94a6184CDFCE8DCC60E7C305b8299",
-      ICP: "0x51cCdE9Ca75d95BB55eCe1775fCBFF91324B18A6",
+      WBFT: "0x0360a21BA76997f921D6c7eF8e36e82db92c4760",
+      // CKBTC: "0x56bF74Ef5d4aD161D2D8D5d576E70108F152Cd35",
+      // CKUSDC: "0x3662AFEF38c94a6184CDFCE8DCC60E7C305b8299",
+      // ICP: "0x51cCdE9Ca75d95BB55eCe1775fCBFF91324B18A6",
     },
     [eBitfinityNetwork.testnet]: {
       EFG: "0xb7FBeB1d175C05b30FB45c57cA4B272767C1C65C",
@@ -56,6 +56,9 @@ export const BitfinityMarket: IAaveConfiguration = {
       MNX: "0x1Be94873D881ABC9c45Be654e3491728292ff8C7",
     },
   },
+  // ReserveFactorTreasuryAddress: {
+  //   [eBitfinityNetwork.main]: "",
+  // },
   EModes: {
     StableEMode: {
       id: "1",
@@ -63,15 +66,15 @@ export const BitfinityMarket: IAaveConfiguration = {
       liquidationThreshold: "9750",
       liquidationBonus: "10100",
       label: "Stablecoins",
-      assets: ["TUSDT"],
+      assets: [],
     },
   },
   ChainlinkAggregator: {
     [eBitfinityNetwork.main]: {
-      WBFT: "",
-      CKBTC: "",
-      CKUSDC: "",
-      ICP: "",
+      WBFT: "0x6c457F0014BcD42562ca156c819803864780e5f6",
+      // CKBTC: "",
+      // CKUSDC: "",
+      // ICP: "",
     },
     [eBitfinityNetwork.testnet]: {
       CHAP: "0xcFe2E020E3e4DC28Ee29A601CbE7551364fC7AD4",

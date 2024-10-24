@@ -14,7 +14,6 @@ import {
 } from "./types";
 import BitfinityMarket from "../markets/bitfinity";
 import AaveMarket from "../markets/aave";
-import BitfinityMarket from "../markets/bitfinity";
 
 import EthereumV3Config from "../markets/ethereum";
 import AaveTestMarket from "../markets/test";
@@ -46,7 +45,6 @@ export enum ConfigNames {
   Bitfinity = "Bitfinity",
   Commons = "Commons",
   Aave = "Aave",
-  Bitfinity = "Bitfinity",
   Test = "Test",
   Harmony = "Harmony",
   Avalanche = "Avalanche",
@@ -108,8 +106,6 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
       return BitfinityMarket;
     case ConfigNames.Aave:
       return AaveMarket;
-    case ConfigNames.Bitfinity:
-      return BitfinityMarket;
     case ConfigNames.Test:
       return AaveTestMarket;
     case ConfigNames.Harmony:
@@ -257,16 +253,16 @@ export const getChainlinkOracles = async (
   network: eNetwork
 ) => {
   const isLive = hre.config.networks[network].live;
-  // if (isLive) {
-  //   console.log("[NOTICE] Using ChainlinkAggregator from configuration file");
+  if (isLive) {
+    console.log("[NOTICE] Using ChainlinkAggregator from configuration file");
 
-  //   return (
-  //     getParamPerNetwork<ITokenAddress>(
-  //       poolConfig.ChainlinkAggregator,
-  //       network
-  //     ) || {}
-  //   );
-  // }
+    return (
+      getParamPerNetwork<ITokenAddress>(
+        poolConfig.ChainlinkAggregator,
+        network
+      ) || {}
+    );
+  }
   console.log(
     "[WARNING] Using deployed Mock Price Aggregators instead of ChainlinkAggregator from configuration file"
   );

@@ -47,7 +47,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
-  [eBitfinityNetwork.main]: "", // TODO: Add wrapped native token address
+  [eBitfinityNetwork.main]: "0x0360a21BA76997f921D6c7eF8e36e82db92c4760",
   [eBitfinityNetwork.testnet]: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
 };
 
@@ -115,6 +115,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
+  [eBitfinityNetwork.main]: "0x6c457F0014BcD42562ca156c819803864780e5f6",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -139,6 +140,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
+  [eBitfinityNetwork.main]: "0xB0EA85d5660bD248a4c0187DcA06d7997Fc8E5bB",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -159,7 +161,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eBaseNetwork.baseGoerli]: "0xA9F30e6ED4098e9439B2ac8aEA2d3fc26BcEbb45",
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
   [eBitfinityNetwork.testnet]: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-  [eBitfinityNetwork.main]: ZERO_ADDRESS,
+  [eBitfinityNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -171,7 +173,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
   [eBitfinityNetwork.testnet]: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-  [eBitfinityNetwork.main]: ZERO_ADDRESS,
+  [eBitfinityNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
 };
 
 export const DEFAULT_NAMED_ACCOUNTS = {
@@ -191,10 +193,12 @@ export const DEFAULT_NAMED_ACCOUNTS = {
     default: 0,
   },
   treasuryProxyAdmin: {
-    default: 0,
+    // default: 0,
+    default: 1,
   },
   incentivesProxyAdmin: {
-    default: 0,
+    // default: 0,
+    default: 1,
   },
   incentivesEmissionManager: {
     default: 0,

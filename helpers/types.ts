@@ -9,7 +9,6 @@ export enum eTenderly {
 }
 
 export type eNetwork =
-  | eBitfinityNetwork
   | eEthereumNetwork
   | eBitfinityNetwork
   | ePolygonNetwork
@@ -50,10 +49,6 @@ export enum eEthereumNetwork {
   rinkeby = "rinkeby",
   goerli = "goerli",
   sepolia = "sepolia",
-}
-
-export enum eBitfinityNetwork {
-  bitfinity = "bitfinity",
 }
 
 export enum eBaseNetwork {
@@ -461,7 +456,7 @@ export interface iEthereumParamsPerNetwork<T> {
 }
 
 export interface iBitfinityParamsPerNetwork<T> {
-  [eBitfinityNetwork.bitfinity]: T;
+  [eBitfinityNetwork.main]: T;
 }
 
 export interface iPolygonParamsPerNetwork<T> {

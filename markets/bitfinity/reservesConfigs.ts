@@ -24,9 +24,9 @@ export const strategyCHAP: IReserveParams = {
 
 export const strategyWBFT: IReserveParams = {
   strategy: rateStrategyVolatileOne,
-  baseLTVAsCollateral: "6500",
-  liquidationThreshold: "7000",
-  liquidationBonus: "11000",
+  baseLTVAsCollateral: "5000",
+  liquidationThreshold: "7500",
+  liquidationBonus: "10500",
   liquidationProtocolFee: "1000",
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,

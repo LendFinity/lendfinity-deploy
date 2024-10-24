@@ -53,7 +53,7 @@ async function main() {
 
   // const { ReservesConfig, ReserveAssets, ATokenNamePrefix, StableDebtTokenNamePrefix, VariableDebtTokenNamePrefix, SymbolPrefix } = BitfinityMarket
 
-  // const treasuryAddress = await getTreasuryAddress(BitfinityMarket, eBitfinityNetwork.bitfinity);
+  // const treasuryAddress = await getTreasuryAddress(BitfinityMarket, eBitfinityNetwork.main);
 
   // await initReservesByHelper(
   //   ReservesConfig,
