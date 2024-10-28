@@ -6,7 +6,7 @@ declare var hre: HardhatRuntimeEnvironment;
 // Drop reserve
 // This script is used to remove a reserve from the pool
 
-const reserveToDrop = "0xb7fbeb1d175c05b30fb45c57ca4b272767c1c65c";
+const reserveToDrop = "0x0360a21ba76997f921d6c7ef8e36e82db92c4760";
 
 async function main() {
   const [signer] = await hre.ethers.getSigners();
@@ -26,13 +26,13 @@ async function main() {
     "function setReserveFreeze(address asset, bool freeze) external"
   ]
 
-  const poolConfiguratorAddress = "0x4f397754f18B5d54E4BdfB34DaCfb63E4c61D4aB";
-  const poolConfiguratorContract = new ethers.Contract(poolConfiguratorAddress, setReservePauseABI, signer);
+  const poolConfiguratorAddress = "0xA1B7b44E49d6F4ef019729d2d3Ade51Fc1433C91";
+  const poolConfiguratorContract = new ethers.Contract(poolConfiguratorAddress, dropReserveABI, signer);
 
 
   const tx = await waitForTx(
-    // await poolConfiguratorContract.dropReserve(reserveToDrop, { gasLimit, gasPrice })
-    await poolConfiguratorContract.setReservePause(reserveToDrop, false, { gasLimit, gasPrice })
+    await poolConfiguratorContract.dropReserve(reserveToDrop, { gasLimit, gasPrice })
+    // await poolConfiguratorContract.setReservePause(reserveToDrop, false, { gasLimit, gasPrice })
     // await poolConfiguratorContract.setReserveFreeze(reserveToDrop, true, { gasLimit, gasPrice })
     
   )

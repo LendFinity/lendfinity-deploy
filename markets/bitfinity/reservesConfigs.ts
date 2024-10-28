@@ -183,3 +183,22 @@ export const strategyTUSDT: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+
+
+export const strategyCKUSDC: IReserveParams = {
+  strategy: rateStrategyStableOne,
+  baseLTVAsCollateral: "1100",
+  liquidationThreshold: "3700",
+  liquidationBonus: "10300",
+  liquidationProtocolFee: "300",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: true,
+  flashLoanEnabled: true,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1100",
+  supplyCap: "0",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};

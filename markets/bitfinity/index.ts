@@ -11,6 +11,7 @@ import {
   strategyFNS,
   strategyTUSDT,
   strategyEFG,
+  strategyCKUSDC,
 } from "./reservesConfigs";
 
 export const BitfinityMarket: IAaveConfiguration = {
@@ -24,6 +25,10 @@ export const BitfinityMarket: IAaveConfiguration = {
   SymbolPrefix: "Bft",
   ReservesConfig: {
     WBFT: strategyWBFT,
+    RICH: strategyWBFT,
+    ICP: strategyWBFT,
+    ckBTC: strategyWBFT,
+    ckUSDC: strategyCKUSDC
     // CHAP: strategyCHAP,
     // INT: strategyINT,
     // COD: strategyCOD,
@@ -37,7 +42,11 @@ export const BitfinityMarket: IAaveConfiguration = {
   },
   ReserveAssets: {
     [eBitfinityNetwork.main]: {
-      WBFT: "0x0360a21BA76997f921D6c7eF8e36e82db92c4760",
+      WBFT: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
+      RICH: "0xfd4de66eca49799bdde66eb33654e2198ab7bba4",
+      ICP: "0x51ccde9ca75d95bb55ece1775fcbff91324b18a6",
+      ckBTC: "0x56bf74ef5d4ad161d2d8d5d576e70108f152cd35",
+      ckUSDC: "0x3662afef38c94a6184cdfce8dcc60e7c305b8299"
       // CKBTC: "0x56bF74Ef5d4aD161D2D8D5d576E70108F152Cd35",
       // CKUSDC: "0x3662AFEF38c94a6184CDFCE8DCC60E7C305b8299",
       // ICP: "0x51cCdE9Ca75d95BB55eCe1775fCBFF91324B18A6",
@@ -72,6 +81,10 @@ export const BitfinityMarket: IAaveConfiguration = {
   ChainlinkAggregator: {
     [eBitfinityNetwork.main]: {
       WBFT: "0x6c457F0014BcD42562ca156c819803864780e5f6",
+      RICH: "0x93c52eDAE4d4307703568d213ADbD6Ff0e87a5b8",
+      ICP: "0x0A2e2AaB8809764dbF2479d9119463eD185Af3B6",
+      ckBTC: "0x14895FeF32DC208443F2C2A097E0608f4479809e",
+      ckUSDC: "0x736A31927Ef907C47173aD591113f131Bcc849af",
       // CKBTC: "",
       // CKUSDC: "",
       // ICP: "",

@@ -234,8 +234,8 @@ export default {
         network: eBitfinityNetwork.main,
         chainId: 355110,
         urls: {
-          apiURL: "https://explorer.testnet.bitfinity.network/api",
-          browserURL: "https://explorer.testnet.bitfinity.network/",
+          apiURL: "https://explorer.mainnet.bitfinity.network/api",
+          browserURL: "https://explorer.mainnet.bitfinity.network/",
         },
       },
     ],
