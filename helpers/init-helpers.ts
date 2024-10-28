@@ -269,8 +269,8 @@ export const configureReservesByHelper = async (
   reservesParams: iMultiPoolsAssets<IReserveParams>,
   tokenAddresses: { [symbol: string]: tEthereumAddress }
 ) => {
-  const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
-  const gasLimit = 5000000;
+  // const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
+  // const gasLimit = 5000000;
 
   const { deployer } = await hre.getNamedAccounts();
 
@@ -386,7 +386,7 @@ export const configureReservesByHelper = async (
     await waitForTx(
       await aclManager
         .connect(aclAdmin)
-        .addRiskAdmin(reservesSetupHelper.address, { gasLimit, gasPrice })
+        .addRiskAdmin(reservesSetupHelper.address)
     );
 
     // Deploy init per chunks
@@ -404,7 +404,7 @@ export const configureReservesByHelper = async (
       const tx = await waitForTx(
         await reservesSetupHelper.configureReserves(
           poolConfiguratorAddress,
-          chunkedInputParams[chunkIndex], { gasLimit, gasPrice }
+          chunkedInputParams[chunkIndex]
         )
       );
       console.log(
@@ -416,7 +416,7 @@ export const configureReservesByHelper = async (
     await waitForTx(
       await aclManager
         .connect(aclAdmin)
-        .removeRiskAdmin(reservesSetupHelper.address, { gasLimit, gasPrice })
+        .removeRiskAdmin(reservesSetupHelper.address)
     );
   }
 };
