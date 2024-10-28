@@ -12,6 +12,9 @@ import {
   strategyTUSDT,
   strategyEFG,
   strategyCKUSDC,
+  strategyICP,
+  strategyRICH,
+  strategyCKBTC,
 } from "./reservesConfigs";
 
 export const BitfinityMarket: IAaveConfiguration = {
@@ -25,9 +28,9 @@ export const BitfinityMarket: IAaveConfiguration = {
   SymbolPrefix: "Bft",
   ReservesConfig: {
     WBFT: strategyWBFT,
-    RICH: strategyWBFT,
-    ICP: strategyWBFT,
-    ckBTC: strategyWBFT,
+    RICH: strategyRICH,
+    ICP: strategyICP,
+    ckBTC: strategyCKBTC,
     ckUSDC: strategyCKUSDC
     // CHAP: strategyCHAP,
     // INT: strategyINT,

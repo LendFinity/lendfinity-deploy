@@ -6,7 +6,7 @@ declare var hre: HardhatRuntimeEnvironment;
 // Drop reserve
 // This script is used to remove a reserve from the pool
 
-const reserveToDrop = "0x0360a21ba76997f921d6c7ef8e36e82db92c4760";
+const reserveToDrop = "0x3662afef38c94a6184cdfce8dcc60e7c305b8299";
 
 async function main() {
   const [signer] = await hre.ethers.getSigners();
