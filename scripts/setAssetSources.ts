@@ -20,20 +20,12 @@ async function main() {
   const tx = await myContract.setAssetSources(
     // This is the list of assets
     [
-      "0xfd4de66eca49799bdde66eb33654e2198ab7bba4",
-      "0x51ccde9ca75d95bb55ece1775fcbff91324b18a6",
-      "0x56bf74ef5d4ad161d2d8d5d576e70108f152cd35",
-      "0x3662afef38c94a6184cdfce8dcc60e7c305b8299"
-
-    ], 
+      "0x1a2b233715cb798d15c8e125a736f26fc7f079dd",
+    ],
     // This is the list of assets' sources
     [
-      "0x93c52eDAE4d4307703568d213ADbD6Ff0e87a5b8",
-      "0x0A2e2AaB8809764dbF2479d9119463eD185Af3B6",
-      "0x14895FeF32DC208443F2C2A097E0608f4479809e",
-      "0x736A31927Ef907C47173aD591113f131Bcc849af",
-    ], 
-    { gasLimit, gasPrice });
+      "0x431c6Cada46B4c480c61590433bBc5F2B3d2404b",
+    ]);
 
   await tx.wait();
 
