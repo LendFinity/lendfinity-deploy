@@ -8,8 +8,8 @@ import { eContractid, IReserveParams } from "../../helpers/types";
 
 export const strategyICP: IReserveParams = {
   strategy: rateStrategyVolatileOne,
-  baseLTVAsCollateral: "5000",
-  liquidationThreshold: "7500",
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
   liquidationBonus: "10500",
   liquidationProtocolFee: "1000",
   borrowingEnabled: true,
@@ -44,8 +44,8 @@ export const strategyRICH: IReserveParams = {
 
 export const strategyCKBTC: IReserveParams = {
   strategy: rateStrategyVolatileOne,
-  baseLTVAsCollateral: "5000",
-  liquidationThreshold: "7500",
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
   liquidationBonus: "10500",
   liquidationProtocolFee: "1000",
   borrowingEnabled: true,
@@ -80,8 +80,8 @@ export const strategyCKUSDC: IReserveParams = {
 
 export const strategyGLDT: IReserveParams = {
   strategy: rateStrategyVolatileOne,
-  baseLTVAsCollateral: "5000",
-  liquidationThreshold: "7500",
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
   liquidationBonus: "10500",
   liquidationProtocolFee: "1000",
   borrowingEnabled: true,
@@ -98,8 +98,26 @@ export const strategyGLDT: IReserveParams = {
 
 export const strategyWBFT: IReserveParams = {
   strategy: rateStrategyVolatileOne,
-  baseLTVAsCollateral: "5000",
-  liquidationThreshold: "7500",
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "0",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const strategyCHAPX: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
   liquidationBonus: "10500",
   liquidationProtocolFee: "1000",
   borrowingEnabled: true,

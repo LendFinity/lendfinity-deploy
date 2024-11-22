@@ -20,19 +20,24 @@ async function main() {
 
 
   const userData = {
-    "user_id": "0xC9233906aF948B84d74F206ECd2761c954148f4c",
-    "max_collateralSymbol": "ICP",
-    "max_borrowedSymbol": "GLDT",
-    "max_borrowedPrincipal": "28101",
-    "max_borrowedPriceInEth": "90490000",
-    "max_collateralBonus": 1065455.2211,
-    "max_collateralPriceInEth": "933000000"
-}
+    "user_id": "0xdCF6D0C0d7064fB42fEf1346C84fB759bFF4f81a",
+    "max_collateralSymbol": "WBFT",
+    "max_borrowedSymbol": "ckUSDC",
+    "max_borrowedPrincipal": "647210093",
+    "max_borrowedPriceInEth": "103422178",
+    "max_collateralBonus": 230442538923730620,
+    "max_collateralPriceInEth": "10418368"
+  }
 
 
   const assetAddresses = {
     ICP: "0x51ccde9ca75d95bb55ece1775fcbff91324b18a6",
-    GLDT: "0x1a2b233715cb798d15c8e125a736f26fc7f079dd"
+    GLDT: "0x1a2b233715cb798d15c8e125a736f26fc7f079dd",
+    WBFT: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
+    RICH: "0xfd4de66eca49799bdde66eb33654e2198ab7bba4",
+    ckBTC: "0x56bf74ef5d4ad161d2d8d5d576e70108f152cd35",
+    ckUSDC: "0x3662afef38c94a6184cdfce8dcc60e7c305b8299",
+    CHAPX: "0xb37B60166AC1677a50D0ef158541c441bFf3D09A",
   };
 
 
