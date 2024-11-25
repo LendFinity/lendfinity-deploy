@@ -20,14 +20,14 @@ async function main() {
 
 
   const userData = {
-    "user_id": "0xdCF6D0C0d7064fB42fEf1346C84fB759bFF4f81a",
+    "user_id": "0x436ab2FD9C7b53f384d7A284c598f6fdd9d593aa",
     "max_collateralSymbol": "WBFT",
     "max_borrowedSymbol": "ckUSDC",
-    "max_borrowedPrincipal": "647210093",
-    "max_borrowedPriceInEth": "103422178",
-    "max_collateralBonus": 230442538923730620,
-    "max_collateralPriceInEth": "10418368"
-  }
+    "max_borrowedPrincipal": "1000339",
+    "max_borrowedPriceInEth": "105103117",
+    "max_collateralBonus": 601350548658736800,
+    "max_collateralPriceInEth": "13253313"
+}
 
 
   const assetAddresses = {
@@ -40,13 +40,12 @@ async function main() {
     CHAPX: "0xb37B60166AC1677a50D0ef158541c441bFf3D09A",
   };
 
-
   const tx = await waitForTx(
     await poolContract.liquidationCall(
       assetAddresses[userData.max_collateralSymbol],
       assetAddresses[userData.max_borrowedSymbol],  
       userData.user_id,                             
-      ethers.utils.parseUnits(userData.max_borrowedPrincipal, 18),
+      ethers.utils.parseUnits(userData.max_borrowedPrincipal, 6),
       true
     )
   );

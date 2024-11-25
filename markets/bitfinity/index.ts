@@ -8,6 +8,7 @@ import {
   strategyCKBTC,
   strategyGLDT,
   strategyCHAPX,
+  strategyNICP,
 } from "./reservesConfigs";
 
 export const BitfinityMarket: IAaveConfiguration = {
@@ -26,7 +27,8 @@ export const BitfinityMarket: IAaveConfiguration = {
     ckBTC: strategyCKBTC,
     ckUSDC: strategyCKUSDC,
     GLDT: strategyGLDT,
-    CHAPX: strategyCHAPX
+    CHAPX: strategyCHAPX,
+    nICP: strategyNICP,
     // CHAP: strategyCHAP,
     // INT: strategyINT,
     // COD: strategyCOD,
@@ -47,6 +49,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       ckUSDC: "0x3662afef38c94a6184cdfce8dcc60e7c305b8299",
       GLDT: "0x1a2b233715cb798d15c8e125a736f26fc7f079dd",
       CHAPX: "0xb37B60166AC1677a50D0ef158541c441bFf3D09A",
+      nICP: "0x2a78a5f819393105a54f21adeb4a8b68c5030b02"
       // CKBTC: "0x56bF74Ef5d4aD161D2D8D5d576E70108F152Cd35",
       // CKUSDC: "0x3662AFEF38c94a6184CDFCE8DCC60E7C305b8299",
       // ICP: "0x51cCdE9Ca75d95BB55eCe1775fCBFF91324B18A6",
@@ -86,10 +89,8 @@ export const BitfinityMarket: IAaveConfiguration = {
       ckBTC: "0x14895FeF32DC208443F2C2A097E0608f4479809e",
       ckUSDC: "0x736A31927Ef907C47173aD591113f131Bcc849af",
       GLDT: "0x431c6Cada46B4c480c61590433bBc5F2B3d2404b",
-      CHAPX: "0xe29812203e0E713b875F165F742713b1d0308e5f"
-      // CKBTC: "",
-      // CKUSDC: "",
-      // ICP: "",
+      CHAPX: "0xe29812203e0E713b875F165F742713b1d0308e5f",
+      nICP: "0x449B8b632aBe15f19778220DC1ba4EC69d0F66fA"
     },
     [eBitfinityNetwork.testnet]: {
       CHAP: "0xcFe2E020E3e4DC28Ee29A601CbE7551364fC7AD4",

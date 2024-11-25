@@ -20,11 +20,11 @@ async function main() {
   const tx = await myContract.setAssetSources(
     // This is the list of assets
     [
-      "0xb37B60166AC1677a50D0ef158541c441bFf3D09A",
+      "0x2a78a5f819393105a54f21adeb4a8b68c5030b02",
     ],
     // This is the list of assets' sources
     [
-      "0xe29812203e0E713b875F165F742713b1d0308e5f",
+      "0x449B8b632aBe15f19778220DC1ba4EC69d0F66fA",
     ]);
 
   await tx.wait();

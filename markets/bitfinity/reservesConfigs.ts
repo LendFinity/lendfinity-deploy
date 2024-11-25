@@ -1,5 +1,6 @@
 import {
   rateStrategyStableOne,
+  rateStrategyStableTwo,
   rateStrategyVolatileOne,
 } from "./../aave/rateStrategies";
 import { eContractid, IReserveParams } from "../../helpers/types";
@@ -67,7 +68,7 @@ export const strategyCKUSDC: IReserveParams = {
   liquidationBonus: "10500",
   liquidationProtocolFee: "300",
   borrowingEnabled: true,
-  stableBorrowRateEnabled: true,
+  stableBorrowRateEnabled: false,
   flashLoanEnabled: true,
   reserveDecimals: "6",
   aTokenImpl: eContractid.AToken,
@@ -123,7 +124,7 @@ export const strategyCHAPX: IReserveParams = {
   borrowingEnabled: true,
   stableBorrowRateEnabled: false,
   flashLoanEnabled: true,
-  reserveDecimals: "18",
+  reserveDecimals: "8",
   aTokenImpl: eContractid.AToken,
   reserveFactor: "1000",
   supplyCap: "0",
@@ -131,6 +132,24 @@ export const strategyCHAPX: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+
+export const strategyNICP: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "8",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "0",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+}
 
 // ----
 
