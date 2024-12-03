@@ -25,8 +25,8 @@ async function main() {
   );
 
   const tx = await poolConfiguratorContract.setReserveInterestRateStrategyAddress(
-    "0x3662afef38c94a6184cdfce8dcc60e7c305b8299",
-    "0x143129dA13F9D31e6eefE586e6Ab73b2cAb82a42"
+    "0x3662afef38c94a6184cdfce8dcc60e7c305b8299", // Token
+    "0xe7Eb22A9fD575D8969b530f6b82F52c4ACdaF2AC" // Strategy
   );
 
   await tx.wait();

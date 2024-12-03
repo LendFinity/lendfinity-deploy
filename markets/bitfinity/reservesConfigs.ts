@@ -187,6 +187,43 @@ export const strategyCKUSDT: IReserveParams = {
   borrowableIsolation: false,
 }
 
+export const strategyDKP: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "7500",
+  liquidationThreshold: "8000",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "8",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "400000",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+}
+
+
+export const strategySONIC: IReserveParams = {
+  strategy: rateStrategyVolatileOne,
+  baseLTVAsCollateral: "5000",
+  liquidationThreshold: "8000",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: true,
+  reserveDecimals: "8",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "600000",
+  borrowCap: "0",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+}
+
 // ----
 
 export const strategyCHAP: IReserveParams = {

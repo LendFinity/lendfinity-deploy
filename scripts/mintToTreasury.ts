@@ -10,7 +10,7 @@ async function main() {
     "function mintToTreasury(address[] assets) external",
   ];
 
-  const poolAddress = "0xD8B9c8934049Ed80f497489f9eE5139aa044FC0e";
+  const poolAddress = "0x8Af2496be337886c843816d969bD3F2a7A8c2d3E";
   const poolContract = new ethers.Contract(
     poolAddress,
     mintToTreasuryABI,
@@ -19,7 +19,7 @@ async function main() {
 
   const tx = await waitForTx(
     await poolContract.mintToTreasury([
-      "0xCaC121dd65ed6C4Fe5f204E11f389d9171cEDAfE",
+      "0x3662afef38c94a6184cdfce8dcc60e7c305b8299",
     ])
   );
 

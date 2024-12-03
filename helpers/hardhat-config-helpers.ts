@@ -163,13 +163,13 @@ export const getCommonNetworkConfig = (
   chainId,
   gasPrice: GAS_PRICE_PER_NET[networkName] || undefined,
   ...((!!MNEMONICS[networkName] || !!MNEMONIC) && {
-    accounts: [process.env.PRIVATE_KEY],
-    // accounts: {
-    //   mnemonic: MNEMONICS[networkName] || MNEMONIC,
-    //   path: MNEMONIC_PATH,
-    //   initialIndex: 0,
-    //   count: 10,
-    // },
+    // accounts: [process.env.PRIVATE_KEY],
+    accounts: {
+      mnemonic: MNEMONICS[networkName] || MNEMONIC,
+      path: MNEMONIC_PATH,
+      initialIndex: 0,
+      count: 10,
+    },
   }),
   live: LIVE_NETWORKS[networkName] || false,
 });
