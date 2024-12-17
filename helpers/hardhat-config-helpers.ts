@@ -126,7 +126,7 @@ const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {
   [eArbitrumNetwork.goerliNitro]: 100000001,
   [eBaseNetwork.baseGoerli]: 8000000000,
   // [eBitfinityNetwork.main]: 8000000000,
-  [eBitfinityNetwork.main]: 80000,
+  [eBitfinityNetwork.main]: 343597383681,
 };
 
 export const buildForkConfig = ():
