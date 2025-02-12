@@ -34,10 +34,10 @@ const func: DeployFunction = async function ({
     process.env.FORK ? process.env.FORK : hre.network.name
   ) as eNetwork;
 
-  // if (isProductionMarket(poolConfig)) {
-  //   console.log("[NOTICE] Skipping deployment of testnet price aggregators");
-  //   return;
-  // }
+  if (isProductionMarket(poolConfig)) {
+    console.log("[NOTICE] Skipping deployment of testnet price aggregators");
+    return;
+  }
 
   const reserves = await getReserveAddresses(poolConfig, network);
 

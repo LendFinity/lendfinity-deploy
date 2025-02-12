@@ -21,7 +21,6 @@ task(
   );
 
   let assetsWithProtocolFees = [];
-
   for (let asset in config.ReservesConfig) {
     const liquidationProtocolFee = BigNumber.from(
       config.ReservesConfig[asset].liquidationProtocolFee
@@ -29,12 +28,12 @@ task(
     const assetAddress = await getReserveAddress(config, asset);
 
     if (liquidationProtocolFee && liquidationProtocolFee.gt("0")) {
-      // await waitForTx(
-      //   await poolConfigurator.setLiquidationProtocolFee(
-      //     assetAddress,
-      //     liquidationProtocolFee
-      //   )
-      // );
+      await waitForTx(
+        await poolConfigurator.setLiquidationProtocolFee(
+          assetAddress,
+          liquidationProtocolFee
+        )
+      );
       assetsWithProtocolFees.push(asset);
     }
   }

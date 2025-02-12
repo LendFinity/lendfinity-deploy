@@ -64,6 +64,13 @@ task(`review-stable-borrow`, ``)
           exit(3);
         }
 
+        console.log(
+          "- Checking reserve",
+          symbol,
+          `, normalized symbol`,
+          normalizedSymbol
+        );
+
         const expectedStableRateEnabled =
           poolConfig.ReservesConfig[normalizedSymbol.toUpperCase()]
             .stableBorrowRateEnabled;

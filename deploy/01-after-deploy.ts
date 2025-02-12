@@ -39,8 +39,8 @@ const func: DeployFunction = async function ({
 
   if (isTestnetMarket(poolConfig)) {
     // Disable faucet minting and borrowing of wrapped native token
-    // await hre.run("disable-faucet-native-testnets");
-    // console.log("- Minting and borrowing of wrapped native token disabled");
+    await hre.run("disable-faucet-native-testnets");
+    console.log("- Minting and borrowing of wrapped native token disabled");
 
     // Unpause pool
     const poolConfigurator = await getPoolConfiguratorProxy();
