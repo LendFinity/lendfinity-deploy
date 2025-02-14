@@ -12,9 +12,10 @@ import {
   SubTokenOutput,
   AssetType,
 } from "./types";
+import LuksoMarket from "../markets/lukso";
+import TaraxaMarket from "../markets/taraxa";
 import BitfinityMarket from "../markets/bitfinity";
 import AaveMarket from "../markets/aave";
-
 import EthereumV3Config from "../markets/ethereum";
 import AaveTestMarket from "../markets/test";
 import HarmonyMarket from "../markets/harmony";
@@ -42,6 +43,8 @@ import { ENABLE_REWARDS } from "./env";
 declare var hre: HardhatRuntimeEnvironment;
 
 export enum ConfigNames {
+  Lukso = "Lukso",
+  Taraxa = "Taraxa",
   Bitfinity = "Bitfinity",
   Commons = "Commons",
   Aave = "Aave",
@@ -102,6 +105,10 @@ export const getAddressFromConfig = (
 
 export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
   switch (configName) {
+    case ConfigNames.Lukso:
+      return LuksoMarket;
+    case ConfigNames.Taraxa:
+      return TaraxaMarket;
     case ConfigNames.Bitfinity:
       return BitfinityMarket;
     case ConfigNames.Aave:
@@ -208,7 +215,6 @@ export const getReserveAddresses = async (
     acc[symbol] = allDeployments[key].address;
     return acc;
   }, {});
-
 };
 
 export const getSubTokensByPrefix = async (

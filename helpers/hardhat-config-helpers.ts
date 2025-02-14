@@ -13,13 +13,12 @@ import {
   eOptimismNetwork,
   eBaseNetwork,
   eBitfinityNetwork,
+  eLuksoNetwork,
+  eTaraxaNetwork,
+  eMonadNetwork,
 } from "./types";
 
 require("dotenv").config();
-
-
-  // const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
-  // const gasLimit = 800000;
 
 // export const DEFAULT_BLOCK_GAS_LIMIT = 800000;
 // export const DEFAULT_GAS_PRICE = 30000000000;
@@ -63,6 +62,11 @@ export const getAlchemyKey = (net: eNetwork) => {
 };
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
+  [eLuksoNetwork.main]: `https://mainnet.bitfinity.network/`,
+  [eLuksoNetwork.testnet]: `https://testnet.bitfinity.network/`,
+  [eTaraxaNetwork.main]: `https://rpc.mainnet.taraxa.io`,
+  [eTaraxaNetwork.testnet]: `https://rpc.testnet.taraxa.io`,
+  [eMonadNetwork.testnet]: `https://testnet-rpc.monad.xyz`,
   [eBitfinityNetwork.main]: `https://mainnet.bitfinity.network/`,
   [eBitfinityNetwork.testnet]: `https://testnet.bitfinity.network/`,
   [eEthereumNetwork.kovan]: `https://eth-kovan.alchemyapi.io/v2/${getAlchemyKey(
@@ -110,7 +114,6 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
-  [eBitfinityNetwork.testnet]: true,
   [eEthereumNetwork.main]: true,
   [ePolygonNetwork.polygon]: true,
   [eArbitrumNetwork.arbitrum]: true,
@@ -120,6 +123,7 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eOptimismNetwork.main]: true,
   [eBaseNetwork.base]: true,
   [eBitfinityNetwork.main]: true,
+  [eTaraxaNetwork.main]: true,
 };
 
 const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {
@@ -207,9 +211,6 @@ export const hardhatNetworkSettings = {
         }
       : undefined,
 };
-
-
-
 
 export const DETERMINISTIC_FACTORIES = {
   "1": {

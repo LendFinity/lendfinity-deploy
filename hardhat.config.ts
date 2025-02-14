@@ -16,6 +16,9 @@ import {
   ePolygonNetwork,
   eBaseNetwork,
   eBitfinityNetwork,
+  eLuksoNetwork,
+  eTaraxaNetwork,
+  eMonadNetwork,
 } from "./helpers/types";
 import { DEFAULT_NAMED_ACCOUNTS } from "./helpers/constants";
 
@@ -80,6 +83,20 @@ export default {
     [eBitfinityNetwork.testnet]: getCommonNetworkConfig(
       eBitfinityNetwork.testnet,
       355113
+    ),
+    [eLuksoNetwork.main]: getCommonNetworkConfig(eLuksoNetwork.main, 42),
+    [eLuksoNetwork.testnet]: getCommonNetworkConfig(
+      eLuksoNetwork.testnet,
+      4201
+    ),
+    [eTaraxaNetwork.main]: getCommonNetworkConfig(eTaraxaNetwork.main, 841),
+    [eTaraxaNetwork.testnet]: getCommonNetworkConfig(
+      eTaraxaNetwork.testnet,
+      842
+    ),
+    [eMonadNetwork.testnet]: getCommonNetworkConfig(
+      eMonadNetwork.testnet,
+      10143
     ),
     [ePolygonNetwork.polygon]: getCommonNetworkConfig(
       ePolygonNetwork.polygon,
@@ -220,6 +237,11 @@ export default {
     apiKey: {
       [eBitfinityNetwork.testnet]: "0x",
       [eBitfinityNetwork.main]: "0x",
+      [eLuksoNetwork.testnet]: "0x",
+      [eLuksoNetwork.main]: "0x",
+      [eTaraxaNetwork.testnet]: "0x",
+      [eTaraxaNetwork.main]: "0x",
+      [eMonadNetwork.testnet]: "0x",
     },
     customChains: [
       {
@@ -236,6 +258,46 @@ export default {
         urls: {
           apiURL: "https://explorer.mainnet.bitfinity.network/api",
           browserURL: "https://explorer.mainnet.bitfinity.network/",
+        },
+      },
+      {
+        network: eLuksoNetwork.main,
+        chainId: 42,
+        urls: {
+          apiURL: "https://explorer.execution.mainnet.lukso.network/api",
+          browserURL: "https://explorer.execution.mainnet.lukso.network/",
+        },
+      },
+      {
+        network: eLuksoNetwork.testnet,
+        chainId: 4201,
+        urls: {
+          apiURL: "https://explorer.execution.testnet.lukso.network/api",
+          browserURL: "https://explorer.execution.testnet.lukso.network/",
+        },
+      },
+      {
+        network: eTaraxaNetwork.main,
+        chainId: 841,
+        urls: {
+          apiURL: "https://tara.to/api",
+          browserURL: "https://tara.to/",
+        },
+      },
+      {
+        network: eTaraxaNetwork.testnet,
+        chainId: 842,
+        urls: {
+          apiURL: "https://testnet.to/api",
+          browserURL: "https://testnet.to/",
+        },
+      },
+      {
+        network: eMonadNetwork.testnet,
+        chainId: 10143,
+        urls: {
+          apiURL: "https://testnet.monadexplorer.com/api",
+          browserURL: "https://testnet.monadexplorer.com/",
         },
       },
     ],

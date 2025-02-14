@@ -1,0 +1,63 @@
+Deployments
+===========
+┌─────────────────────────────────────────┬──────────────────────────────────────────────┐
+│                 (index)                 │                   address                    │
+├─────────────────────────────────────────┼──────────────────────────────────────────────┤
+│      PoolAddressesProviderRegistry      │ '0x6194D6C2487859CA0AdE35c72a8b22A95fb18CEC' │
+│               SupplyLogic               │ '0xc446BDC4D7AbB42ffA90A31FdcD063b267dAd07f' │
+│               BorrowLogic               │ '0xD0b6b8438FB60F9feA39Be600ae2285Fb3C72EBa' │
+│            LiquidationLogic             │ '0x269AA24371779dD2bd7B719eeba7535Ec8F11Add' │
+│               EModeLogic                │ '0x3E991C9B43ECfBcAcf6C15695E1A3A97B74C6a8a' │
+│               BridgeLogic               │ '0xF8695748844d7DdDc4AF2F82F56b0d4378967664' │
+│            ConfiguratorLogic            │ '0x29898A7135fe9030162b685FdE58A41b48813Ea2' │
+│             FlashLoanLogic              │ '0x6426200ae3eCF4160C804969d577cB9D9972e3F8' │
+│                PoolLogic                │ '0x5fab43F1414aBb62d33597687DF3e67Edf1C14a3' │
+│              TreasuryProxy              │ '0x9600434c12dE2c1fF702F5Cf1d0e28324C31af99' │
+│           Treasury-Controller           │ '0xae2968eA19508aFa561C53a8E79fC708E4741952' │
+│         Treasury-Implementation         │ '0xBD732A6240b6525D5E91001984ba47e8B8C89305' │
+│              Faucet-Taraxa              │ '0x8e22c2c0B0978e9368e49794535943DD96d6A915' │
+│      PoolAddressesProvider-Taraxa       │ '0x1583A9800736230B4a09F7398D50D9EC6553b303' │
+│         PoolDataProvider-Taraxa         │ '0x8870102892AC88E9a29F59113e676e5012bEe04B' │
+│   WTARA-TestnetPriceAggregator-Taraxa   │ '0x53809e6E012211bd5c9e2C95349382A6E29a7bB8' │
+│   USDT-TestnetPriceAggregator-Taraxa    │ '0x8bC086A6b7d412EBf6Ad3578ECA6262aE4eF62b8' │
+│   USDC-TestnetPriceAggregator-Taraxa    │ '0x10249eAB76d61387a477bA15Ea31dDcF36943DE1' │
+│           Pool-Implementation           │ '0x77270d84C3E138f549B157D821bd6B28C2bd4a4A' │
+│     PoolConfigurator-Implementation     │ '0xBFAb8b78B4690299B6A520dF3aaC05769898Feb8' │
+│           ReservesSetupHelper           │ '0x52973CB770eB5Cc101399F33374C59f99bB45110' │
+│            ACLManager-Taraxa            │ '0x00D01df795ec4c463b66251C97401dcf29ee1875' │
+│         LendfinityOracle-Taraxa         │ '0xa8acb8f24535BF85df25eE6083F5834F0C59e8F1' │
+│            Pool-Proxy-Taraxa            │ '0x66297D8C8d2618888d4c74f3d02616c71B45325F' │
+│      PoolConfigurator-Proxy-Taraxa      │ '0x0758e6e7afB3aa1Ab44d5c47b24ec0B5b3A8483c' │
+│             EmissionManager             │ '0xB148Cb9cDcC3ffde1ec328F43ba9224642E583ef' │
+│       IncentivesV2-Implementation       │ '0x7B6dA53e31570f09c0BC468a4398Aa778B79A7d9' │
+│             IncentivesProxy             │ '0xA586BD740A0F4cb6DB1514aFCcD54eFC4c8C26a4' │
+│       PullRewardsTransferStrategy       │ '0xeAe2e6d9e5f2847515Fe4b471DB96AfE82b6b9A5' │
+│              LToken-Taraxa              │ '0xe7Eb22A9fD575D8969b530f6b82F52c4ACdaF2AC' │
+│      DelegationAwareLToken-Taraxa       │ '0xdFDbDFB78271CEb8DC38250450Cbc489F158a501' │
+│         StableDebtToken-Taraxa          │ '0x6A0A1db98f197eb0f35811C9Df8b5173AAe92C4b' │
+│        VariableDebtToken-Taraxa         │ '0xEEF3a71E0bb5aAc2A9c9420558780af1d4421660' │
+│ ReserveStrategy-rateStrategyVolatileOne │ '0x3247F90893725486c79bE53ABC6eFf3161d439a2' │
+│  ReserveStrategy-rateStrategyStableOne  │ '0x3f59CE47Ec6f511362D2c5f5FEb9c56F916745Db' │
+│  ReserveStrategy-rateStrategyStableTwo  │ '0x87C8eEDeC13A0d50EB305c1f0E77C4BB7e4ccE9B' │
+│           WTARA-LToken-Taraxa           │ '0x8143ffd50D5f611689707A37b2a5F3475c09067A' │
+│     WTARA-VariableDebtToken-Taraxa      │ '0x4eA51cC573679292B295aa007DF681281e7be07c' │
+│      WTARA-StableDebtToken-Taraxa       │ '0xb96fF524933fE3CFD592b02dACeF1216D747c005' │
+│           USDT-LToken-Taraxa            │ '0x27d19719f3d642f22bC6926b8142aD7B7058c24c' │
+│      USDT-VariableDebtToken-Taraxa      │ '0xbe307e298E5b2f63b2dB1329d493405Cfe3930F7' │
+│       USDT-StableDebtToken-Taraxa       │ '0xD029c3B56734C58BAE1237769997Fa18ec32a4eb' │
+│           USDC-LToken-Taraxa            │ '0x8E4C52327FC3c6B52F33Aaa366f1277ff674d3af' │
+│      USDC-VariableDebtToken-Taraxa      │ '0x52E7D209BC5D9eeaB5267FC1D58495dFaD1BDCB3' │
+│       USDC-StableDebtToken-Taraxa       │ '0xC35a4c6BFaa359b203C73E3CbeDfA30aA10945AA' │
+│          MockFlashLoanReceiver          │ '0x0eFB9237514da7d796472bF9d8D2b1e9FB76F3f9' │
+│          WrappedTokenGatewayV3          │ '0xbD94Fb9732A807a09A5e65fb28666f70CecBDD0f' │
+│          WalletBalanceProvider          │ '0xf1BE95F34Bdd2BDBF5205A62C5749ee2Da599853' │
+└─────────────────────────────────────────┴──────────────────────────────────────────────┘
+
+Mintable Reserves and Rewards
+┌───────────────────────────────────┬──────────────────────────────────────────────┐
+│              (index)              │                   address                    │
+├───────────────────────────────────┼──────────────────────────────────────────────┤
+│ WTARA-TestnetMintableERC20-Taraxa │ '0xa3911b6EE6E2319d1dD0b19932390eB15Cf8DF24' │
+│ USDT-TestnetMintableERC20-Taraxa  │ '0x6ebA0c235190aDfCeb0FC6EfF6188Ba65d12e4E9' │
+│ USDC-TestnetMintableERC20-Taraxa  │ '0x28F73DC06BC9C27b066E0bbEC1DCAA2a8500dcC7' │
+└───────────────────────────────────┴──────────────────────────────────────────────┘

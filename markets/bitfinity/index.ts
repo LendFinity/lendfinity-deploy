@@ -36,7 +36,7 @@ export const BitfinityMarket: IAaveConfiguration = {
     ckETH: strategyCKETH,
     ckUSDT: strategyCKUSDT,
     DKP: strategyDKP,
-    SONIC: strategySONIC
+    SONIC: strategySONIC,
   },
   ReserveAssets: {
     [eBitfinityNetwork.main]: {
@@ -51,7 +51,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       ckETH: "0x242bbcb4f4f1b752ae30757dc9ae9c24d9a9b640",
       ckUSDT: "0xe613ebd1eae99d824da8a6c33ec833a62bc04b5a",
       DKP: "0x6286e8464E2817818EF8c3353e91824f680354d2",
-      SONIC: "0x491016BF872D35a798c601d53442775c621BF91A"
+      SONIC: "0x491016BF872D35a798c601d53442775c621BF91A",
     },
     [eBitfinityNetwork.testnet]: {
       EFG: "0xb7FBeB1d175C05b30FB45c57cA4B272767C1C65C",
@@ -93,7 +93,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       ckETH: "0x5748c74a090Be529f38AA8dF96d2F930A49Ab8AB",
       ckUSDT: "0x1d0e53A3b294a4Ce84a4986f7Af6bf820bab5516",
       DKP: "0xC73ef269937449c8d85B140A46e0328c2695cb37",
-      SONIC: "0x6f96b634A1A3E3991E46308325863128684ebab3"
+      SONIC: "0x6f96b634A1A3E3991E46308325863128684ebab3",
     },
     [eBitfinityNetwork.testnet]: {
       CHAP: "0xcFe2E020E3e4DC28Ee29A601CbE7551364fC7AD4",
@@ -105,7 +105,7 @@ export const BitfinityMarket: IAaveConfiguration = {
       FNS: "0x8F1A47187e07f3fadC561f40f82eb4FE20468bb8",
       INT: "0x8fB5F54dAEB90e124D3EDc0Ba3132Fe03af0a0De",
       EFG: "0xA10e1eCBC6Bd1DcE07C0189D9461C84E1BFfA55E",
-      MNX: "0xA10e1eCBC6Bd1DcE07C0189D9461C84E1BFfA55E"
+      MNX: "0xA10e1eCBC6Bd1DcE07C0189D9461C84E1BFfA55E",
     },
   },
 };

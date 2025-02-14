@@ -11,6 +11,9 @@ export enum eTenderly {
 export type eNetwork =
   | eEthereumNetwork
   | eBitfinityNetwork
+  | eLuksoNetwork
+  | eTaraxaNetwork
+  | eMonadNetwork
   | ePolygonNetwork
   | eXDaiNetwork
   | eAvalancheNetwork
@@ -26,6 +29,20 @@ type eTenderlyNetwork = "tenderly";
 export enum eBitfinityNetwork {
   main = "bitfinity",
   testnet = "bitfinity-testnet",
+}
+
+export enum eLuksoNetwork {
+  main = "lukso",
+  testnet = "lukso-testnet",
+}
+
+export enum eTaraxaNetwork {
+  main = "taraxa",
+  testnet = "taraxa-testnet",
+}
+
+export enum eMonadNetwork {
+  testnet = "monad-testnet",
 }
 
 export enum eFantomNetwork {
@@ -457,6 +474,21 @@ export interface iEthereumParamsPerNetwork<T> {
 
 export interface iBitfinityParamsPerNetwork<T> {
   [eBitfinityNetwork.main]: T;
+  [eBitfinityNetwork.testnet]: T;
+}
+
+export interface iLuksoParamsPerNetwork<T> {
+  [eLuksoNetwork.main]: T;
+  [eLuksoNetwork.testnet]: T;
+}
+
+export interface iTaraxaParamsPerNetwork<T> {
+  [eTaraxaNetwork.main]: T;
+  [eTaraxaNetwork.testnet]: T;
+}
+
+export interface iMonadParamsPerNetwork<T> {
+  [eMonadNetwork.testnet]: T;
 }
 
 export interface iPolygonParamsPerNetwork<T> {

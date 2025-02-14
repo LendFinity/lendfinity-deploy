@@ -9,6 +9,9 @@ import {
   eOptimismNetwork,
   ePolygonNetwork,
   eBitfinityNetwork,
+  eLuksoNetwork,
+  eTaraxaNetwork,
+  eMonadNetwork,
 } from "./types";
 
 const {
@@ -49,6 +52,11 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
   [eBitfinityNetwork.main]: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
   [eBitfinityNetwork.testnet]: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
+  [eLuksoNetwork.main]: "0xF9506457473bFcc285a22C7Ea42e88ABA2b888EE",
+  [eLuksoNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
+  [eTaraxaNetwork.main]: "0xF9506457473bFcc285a22C7Ea42e88ABA2b888EE",
+  [eTaraxaNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
+  [eMonadNetwork.testnet]: "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701",
 };
 
 export const ZERO_BYTES_32 =
@@ -81,16 +89,7 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
 
-  WBFT: parseUnits("90", 8).toString(),
-  CHAP: parseUnits("2", 8).toString(),
-  INT: parseUnits("3", 8).toString(),
-  COD: parseUnits("4", 8).toString(),
-  CAL: parseUnits("5", 8).toString(),
-  CVA: parseUnits("6", 8).toString(),
-  CYN: parseUnits("7", 8).toString(),
-  FNS: parseUnits("8", 8).toString(),
-  TUSDT: parseUnits("1", 8).toString(),
-  EFG: parseUnits("1", 8).toString(),
+  WTARA: parseUnits("0.01", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
@@ -116,6 +115,8 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
   [eBitfinityNetwork.main]: "0x6c457F0014BcD42562ca156c819803864780e5f6",
+  lukso: "0x3153e4d03Cf97B230fc9c9d0ECCE5b2F0834d130",
+  taraxa: "0x7D06cc8210228365896A3cc8Aac88c5551529112",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -141,6 +142,8 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
   [eBitfinityNetwork.testnet]: "0x7beFdBbbf4d686C2c67bcb958cF542f1a2146d91",
   [eBitfinityNetwork.main]: "0xB0EA85d5660bD248a4c0187DcA06d7997Fc8E5bB",
+  lukso: "0xc7f3aceBe05482eeCD668df1FCF1B59e6d14f77b",
+  taraxa: "0x7D06cc8210228365896A3cc8Aac88c5551529112",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -162,6 +165,11 @@ export const POOL_ADMIN: Record<string, string> = {
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
   [eBitfinityNetwork.testnet]: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
   [eBitfinityNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eLuksoNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eLuksoNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eTaraxaNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eMonadNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -174,6 +182,11 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
   [eBitfinityNetwork.testnet]: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
   [eBitfinityNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eLuksoNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eLuksoNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eTaraxaNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eMonadNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
 };
 
 export const DEFAULT_NAMED_ACCOUNTS = {
