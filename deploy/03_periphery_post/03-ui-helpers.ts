@@ -19,6 +19,8 @@ const func: DeployFunction = async function ({
     process.env.FORK ? process.env.FORK : hre.network.name
   ) as eNetwork;
 
+  console.log(chainlinkAggregatorProxy);
+
   if (!chainlinkAggregatorProxy[network]) {
     console.log(
       '[Deployments] Skipping the deployment of UiPoolDataProvider due missing constant "chainlinkAggregatorProxy" configuration at ./helpers/constants.ts'
@@ -26,19 +28,23 @@ const func: DeployFunction = async function ({
     return;
   }
   // Deploy UiIncentiveDataProvider getter helper
-  await deploy("UiIncentiveDataProviderV3", {
-    from: deployer,
-  });
+  console.log(
+    await deploy("UiIncentiveDataProviderV3", {
+      from: deployer,
+    })
+  );
 
   // Deploy UiPoolDataProvider getter helper
-  await deploy("UiPoolDataProviderV3", {
-    from: deployer,
-    args: [
-      chainlinkAggregatorProxy[network],
-      chainlinkEthUsdAggregatorProxy[network],
-    ],
-    ...COMMON_DEPLOY_PARAMS,
-  });
+  console.log(
+    await deploy("UiPoolDataProviderV3", {
+      from: deployer,
+      args: [
+        chainlinkAggregatorProxy[network],
+        chainlinkEthUsdAggregatorProxy[network],
+      ],
+      ...COMMON_DEPLOY_PARAMS,
+    })
+  );
 };
 
 func.tags = ["periphery-post", "ui-helpers"];

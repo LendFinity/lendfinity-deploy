@@ -22,7 +22,7 @@ export const strategyWLYX: IReserveParams = {
   borrowableIsolation: false,
 };
 
-export const strategyCHILL: IReserveParams = {
+export const strategyLINK: IReserveParams = {
   strategy: rateStrategyVolatileOne,
   baseLTVAsCollateral: "7500",
   liquidationThreshold: "8000",
@@ -47,7 +47,7 @@ export const strategyUSDC: IReserveParams = {
   liquidationBonus: "10500",
   liquidationProtocolFee: "1000",
   borrowingEnabled: true,
-  stableBorrowRateEnabled: true,
+  stableBorrowRateEnabled: false,
   flashLoanEnabled: true,
   reserveDecimals: "6",
   aTokenImpl: eContractid.AToken,
@@ -55,5 +55,5 @@ export const strategyUSDC: IReserveParams = {
   supplyCap: "2000000000",
   borrowCap: "0",
   debtCeiling: "0",
-  borrowableIsolation: true,
+  borrowableIsolation: false,
 };

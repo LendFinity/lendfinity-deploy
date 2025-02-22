@@ -8,7 +8,7 @@ async function main() {
   const [signer] = await hre.ethers.getSigners();
 
   const liquidationCallABI = [
-    "function liquidationCall(address collateralAsset, address debtAsset, address user, uint256 debtToCover, bool receiveAToken) external"
+    "function liquidationCall(address collateralAsset, address debtAsset, address user, uint256 debtToCover, bool receiveAToken) external",
   ];
 
   const poolAddress = "0x8Af2496be337886c843816d969bD3F2a7A8c2d3E";
@@ -17,18 +17,18 @@ async function main() {
     liquidationCallABI,
     signer
   );
-
+  // const gasPrice = hre.ethers.utils.parseUnits("343597383680", "wei");
+  // const gasLimit = 10000000;
 
   const userData = {
-    "user_id": "",
-    "max_collateralSymbol": "",
-    "max_borrowedSymbol": "",
-    "max_borrowedPrincipal": "",
-    "max_borrowedPriceInEth": "",
-    "max_collateralBonus": "",
-    "max_collateralPriceInEth": ""
-}
-
+    user_id: "0xBd79646Dc63daE2c9eb9b4BA3fC39E8FFB93De38",
+    max_collateralSymbol: "WBFT",
+    max_borrowedSymbol: "ckUSDT",
+    max_borrowedPrincipal: "10773",
+    max_borrowedPriceInEth: "100833994",
+    max_collateralBonus: 54376247683618140000,
+    max_collateralPriceInEth: "2234184",
+  };
 
   const assetAddresses = {
     WBFT: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
@@ -42,21 +42,27 @@ async function main() {
     ckETH: "0x242bbcb4f4f1b752ae30757dc9ae9c24d9a9b640",
     ckUSDT: "0xe613ebd1eae99d824da8a6c33ec833a62bc04b5a",
     DKP: "0x6286e8464E2817818EF8c3353e91824f680354d2",
-    SONIC: "0x491016BF872D35a798c601d53442775c621BF91A"
-  }
+    SONIC: "0x491016BF872D35a798c601d53442775c621BF91A",
+  };
 
-  const tokenContract = new ethers.Contract(assetAddresses[userData.max_borrowedSymbol], erc20Abi, signer);
+  const tokenContract = new ethers.Contract(
+    assetAddresses[userData.max_borrowedSymbol],
+    erc20Abi,
+    signer
+  );
 
-  await waitForTx(await tokenContract.approve(poolAddress, userData.max_borrowedPrincipal));
-
+  await waitForTx(
+    await tokenContract.approve(poolAddress, userData.max_borrowedPrincipal)
+  );
 
   const tx = await waitForTx(
     await poolContract.liquidationCall(
       assetAddresses[userData.max_collateralSymbol],
-      assetAddresses[userData.max_borrowedSymbol],  
-      userData.user_id,                             
+      assetAddresses[userData.max_borrowedSymbol],
+      userData.user_id,
       BigInt(userData.max_borrowedPrincipal),
       true
+      // { gasLimit, gasPrice }
     )
   );
 
@@ -70,240 +76,239 @@ main()
     process.exit(1);
   });
 
+// const provider = getStaticProvider();
+// const contract = new Contract(contractAddresses.pool, poolAbi, provider);
 
-  // const provider = getStaticProvider();
-  // const contract = new Contract(contractAddresses.pool, poolAbi, provider);
+// const collateralAddress = SYMBOL_RESERVE_MAP[loan.max_collateralSymbol];
+// const debtAddress = SYMBOL_RESERVE_MAP[loan.max_borrowedSymbol];
 
-  // const collateralAddress = SYMBOL_RESERVE_MAP[loan.max_collateralSymbol];
-  // const debtAddress = SYMBOL_RESERVE_MAP[loan.max_borrowedSymbol];
+// const tx = await contract.liquidationCall(
+//   collateralAddress,
+//   debtAddress,
+//   loan.user_id,
+//   loan.max_borrowedPrincipal,
+//   true
+// )
 
-  // const tx = await contract.liquidationCall(
-  //   collateralAddress,
-  //   debtAddress,
-  //   loan.user_id,
-  //   loan.max_borrowedPrincipal,
-  //   true
-  // )
-
-  const erc20Abi = [
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "name",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_spender",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-        ],
-        "name": "approve",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "totalSupply",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_from",
-                "type": "address"
-            },
-            {
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-        ],
-        "name": "transferFrom",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "decimals",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint8"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_owner",
-                "type": "address"
-            }
-        ],
-        "name": "balanceOf",
-        "outputs": [
-            {
-                "name": "balance",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "symbol",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-        ],
-        "name": "transfer",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_owner",
-                "type": "address"
-            },
-            {
-                "name": "_spender",
-                "type": "address"
-            }
-        ],
-        "name": "allowance",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "fallback"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": true,
-                "name": "owner",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "name": "spender",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "value",
-                "type": "uint256"
-            }
-        ],
-        "name": "Approval",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": true,
-                "name": "from",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "name": "to",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "value",
-                "type": "uint256"
-            }
-        ],
-        "name": "Transfer",
-        "type": "event"
-    }
-]
+const erc20Abi = [
+  {
+    constant: true,
+    inputs: [],
+    name: "name",
+    outputs: [
+      {
+        name: "",
+        type: "string",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "_spender",
+        type: "address",
+      },
+      {
+        name: "_value",
+        type: "uint256",
+      },
+    ],
+    name: "approve",
+    outputs: [
+      {
+        name: "",
+        type: "bool",
+      },
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "totalSupply",
+    outputs: [
+      {
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "_from",
+        type: "address",
+      },
+      {
+        name: "_to",
+        type: "address",
+      },
+      {
+        name: "_value",
+        type: "uint256",
+      },
+    ],
+    name: "transferFrom",
+    outputs: [
+      {
+        name: "",
+        type: "bool",
+      },
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "decimals",
+    outputs: [
+      {
+        name: "",
+        type: "uint8",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: "_owner",
+        type: "address",
+      },
+    ],
+    name: "balanceOf",
+    outputs: [
+      {
+        name: "balance",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "symbol",
+    outputs: [
+      {
+        name: "",
+        type: "string",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "_to",
+        type: "address",
+      },
+      {
+        name: "_value",
+        type: "uint256",
+      },
+    ],
+    name: "transfer",
+    outputs: [
+      {
+        name: "",
+        type: "bool",
+      },
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: "_owner",
+        type: "address",
+      },
+      {
+        name: "_spender",
+        type: "address",
+      },
+    ],
+    name: "allowance",
+    outputs: [
+      {
+        name: "",
+        type: "uint256",
+      },
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    payable: true,
+    stateMutability: "payable",
+    type: "fallback",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        name: "owner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        name: "spender",
+        type: "address",
+      },
+      {
+        indexed: false,
+        name: "value",
+        type: "uint256",
+      },
+    ],
+    name: "Approval",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        name: "from",
+        type: "address",
+      },
+      {
+        indexed: true,
+        name: "to",
+        type: "address",
+      },
+      {
+        indexed: false,
+        name: "value",
+        type: "uint256",
+      },
+    ],
+    name: "Transfer",
+    type: "event",
+  },
+];

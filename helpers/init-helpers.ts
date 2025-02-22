@@ -353,12 +353,12 @@ export const configureReservesByHelper = async (
     const { usageAsCollateralEnabled: alreadyEnabled } =
       await protocolDataProvider.getReserveConfigurationData(tokenAddress);
 
-    if (alreadyEnabled) {
-      console.log(
-        `- Reserve ${assetSymbol} is already enabled as collateral, skipping`
-      );
-      continue;
-    }
+    // if (alreadyEnabled) {
+    //   console.log(
+    //     `- Reserve ${assetSymbol} is already enabled as collateral, skipping`
+    //   );
+    //   continue;
+    // }
 
     // Push data
 

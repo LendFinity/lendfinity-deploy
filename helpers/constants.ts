@@ -90,6 +90,8 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   CBETH: parseUnits("4000", 8).toString(),
 
   WTARA: parseUnits("0.01", 8).toString(),
+  WLYX: parseUnits("1.3", 8).toString(),
+  mUSDC: parseUnits("1", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {

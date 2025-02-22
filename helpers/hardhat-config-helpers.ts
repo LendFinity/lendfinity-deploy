@@ -62,8 +62,8 @@ export const getAlchemyKey = (net: eNetwork) => {
 };
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
-  [eLuksoNetwork.main]: `https://mainnet.bitfinity.network/`,
-  [eLuksoNetwork.testnet]: `https://testnet.bitfinity.network/`,
+  [eLuksoNetwork.main]: `https://rpc.mainnet.lukso.network`,
+  [eLuksoNetwork.testnet]: `https://rpc.testnet.lukso.network`,
   [eTaraxaNetwork.main]: `https://rpc.mainnet.taraxa.io`,
   [eTaraxaNetwork.testnet]: `https://rpc.testnet.taraxa.io`,
   [eMonadNetwork.testnet]: `https://testnet-rpc.monad.xyz`,
@@ -167,13 +167,13 @@ export const getCommonNetworkConfig = (
   chainId,
   gasPrice: GAS_PRICE_PER_NET[networkName] || undefined,
   ...((!!MNEMONICS[networkName] || !!MNEMONIC) && {
-    // accounts: [process.env.PRIVATE_KEY],
-    accounts: {
-      mnemonic: MNEMONICS[networkName] || MNEMONIC,
-      path: MNEMONIC_PATH,
-      initialIndex: 0,
-      count: 10,
-    },
+    accounts: [process.env.PRIVATE_KEY],
+    // accounts: {
+    //   mnemonic: MNEMONICS[networkName] || MNEMONIC,
+    //   path: MNEMONIC_PATH,
+    //   initialIndex: 0,
+    //   count: 10,
+    // },
   }),
   live: LIVE_NETWORKS[networkName] || false,
 });
