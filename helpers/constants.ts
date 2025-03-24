@@ -55,7 +55,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eLuksoNetwork.main]: "0xF9506457473bFcc285a22C7Ea42e88ABA2b888EE",
   [eLuksoNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
   [eTaraxaNetwork.main]: "0xF9506457473bFcc285a22C7Ea42e88ABA2b888EE",
-  [eTaraxaNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
+  // [eTaraxaNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
   [eMonadNetwork.testnet]: "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701",
 };
 
@@ -90,6 +90,7 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   CBETH: parseUnits("4000", 8).toString(),
 
   WTARA: parseUnits("0.01", 8).toString(),
+  stTARA: parseUnits("0.01", 8).toString(),
   WLYX: parseUnits("1.3", 8).toString(),
   mUSDC: parseUnits("1", 8).toString(),
 };
@@ -119,6 +120,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   [eBitfinityNetwork.main]: "0x6c457F0014BcD42562ca156c819803864780e5f6",
   lukso: "0x3153e4d03Cf97B230fc9c9d0ECCE5b2F0834d130",
   taraxa: "0x7D06cc8210228365896A3cc8Aac88c5551529112",
+  "taraxa-testnet": "0xf05A89E21b81058953F5B6E792CedEcF8A6D294A",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -146,6 +148,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eBitfinityNetwork.main]: "0xB0EA85d5660bD248a4c0187DcA06d7997Fc8E5bB",
   lukso: "0xc7f3aceBe05482eeCD668df1FCF1B59e6d14f77b",
   taraxa: "0x7D06cc8210228365896A3cc8Aac88c5551529112",
+  "taraxa-testnet": "0xa1Ea221715Cd95aE86DF98Af9DA09aEEa0000cB8",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -170,7 +173,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eLuksoNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eLuksoNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eTaraxaNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
-  [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  // [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eMonadNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
 };
 
@@ -187,7 +190,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eLuksoNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eLuksoNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eTaraxaNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
-  [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  // [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eMonadNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
 };
 
