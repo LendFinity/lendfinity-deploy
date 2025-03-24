@@ -71,7 +71,7 @@ const func: DeployFunction = async function ({
   const emissionManager = (await hre.ethers.getContractAt(
     emissionManagerArtifact.abi,
     emissionManagerArtifact.address
-  )) as EmissionManager;
+  )).connect(await hre.ethers.getSigner(deployer)) as EmissionManager;
 
   // Deploy Incentives Implementation
   const incentivesImplArtifact = await deploy(INCENTIVES_V2_IMPL_ID, {
@@ -83,7 +83,7 @@ const func: DeployFunction = async function ({
   const incentivesImpl = (await hre.ethers.getContractAt(
     incentivesImplArtifact.abi,
     incentivesImplArtifact.address
-  )) as RewardsController;
+  )).connect(await hre.ethers.getSigner(deployer)) as RewardsController;
 
   // Call to initialize at implementation contract to prevent others.
   await waitForTx(await incentivesImpl.initialize(ZERO_ADDRESS));

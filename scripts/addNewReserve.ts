@@ -1,6 +1,7 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import { eBitfinityNetwork, getTreasuryAddress, initReservesByHelper, waitForTx } from "../helpers";
+import { eBitfinityNetwork, eLuksoNetwork, getTreasuryAddress, initReservesByHelper, waitForTx } from "../helpers";
 import BitfinityMarket from "../markets/bitfinity";
+import LuksoMarket from "../markets/lukso";
 
 // import func from '../deploy/02_market/09_init_reserves'
 
@@ -13,7 +14,7 @@ declare var hre: HardhatRuntimeEnvironment;
 // https://explorer.testnet.bitfinity.network/address/0x4f397754f18B5d54E4BdfB34DaCfb63E4c61D4aB
 
 async function main() {
-  const [signer] = await hre.ethers.getSigners();
+  const [,,,,,,signer] = await hre.ethers.getSigners();
   const gasPrice = hre.ethers.utils.parseUnits('10', 'gwei');
   const gasLimit = 10000000;
 
@@ -52,20 +53,20 @@ async function main() {
 
   // ----------------------------
 
-  const { ReservesConfig, ReserveAssets, ATokenNamePrefix, StableDebtTokenNamePrefix, VariableDebtTokenNamePrefix, SymbolPrefix } = BitfinityMarket
+  const { ReservesConfig, ReserveAssets, ATokenNamePrefix, StableDebtTokenNamePrefix, VariableDebtTokenNamePrefix, SymbolPrefix } = LuksoMarket
 
-  const treasuryAddress = await getTreasuryAddress(BitfinityMarket, eBitfinityNetwork.main);
+  const treasuryAddress = await getTreasuryAddress(LuksoMarket, eLuksoNetwork.testnet);
 
   await initReservesByHelper(
     ReservesConfig,
-    ReserveAssets?.bitfinity!,
+    ReserveAssets?.["lukso-testnet"]!,
     ATokenNamePrefix,
     StableDebtTokenNamePrefix,
     VariableDebtTokenNamePrefix,
     SymbolPrefix,
     signer.address,
     treasuryAddress,
-    "0x37861B6B5bC02026b05476d527a92B72116C12b5"
+    "0x0096876099884f89df4c0Cbf061e646bCC59f5A8"
   );
 
   // ----------------------------

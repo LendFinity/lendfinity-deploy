@@ -53,10 +53,11 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eBitfinityNetwork.main]: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",
   [eBitfinityNetwork.testnet]: "0x7938ACd297d53bD743c3926E3C24e7262C18AEc3",
   [eLuksoNetwork.main]: "0xF9506457473bFcc285a22C7Ea42e88ABA2b888EE",
-  [eLuksoNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
+  [eLuksoNetwork.testnet]: "0x1244985EAb2fC01d07f20Af014b21BdA52a8379E",
   [eTaraxaNetwork.main]: "0xF9506457473bFcc285a22C7Ea42e88ABA2b888EE",
   [eTaraxaNetwork.testnet]: "0xB789fbA6532378151D2395f1171B1a7461BF6fBe",
   [eMonadNetwork.testnet]: "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701",
+  hardhat: "0x1244985EAb2fC01d07f20Af014b21BdA52a8379E"
 };
 
 export const ZERO_BYTES_32 =
@@ -88,8 +89,9 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
-
   WTARA: parseUnits("0.01", 8).toString(),
+  WLYX: parseUnits("0.01", 8).toString(),
+  SLYX: parseUnits("0.01", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
@@ -117,6 +119,8 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   [eBitfinityNetwork.main]: "0x6c457F0014BcD42562ca156c819803864780e5f6",
   lukso: "0x3153e4d03Cf97B230fc9c9d0ECCE5b2F0834d130",
   taraxa: "0x7D06cc8210228365896A3cc8Aac88c5551529112",
+  [eLuksoNetwork.testnet]: "0x3153e4d03Cf97B230fc9c9d0ECCE5b2F0834d130",
+  hardhat: "0x0000000000000000000000000000000000000000"
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -144,6 +148,8 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   [eBitfinityNetwork.main]: "0xB0EA85d5660bD248a4c0187DcA06d7997Fc8E5bB",
   lukso: "0xc7f3aceBe05482eeCD668df1FCF1B59e6d14f77b",
   taraxa: "0x7D06cc8210228365896A3cc8Aac88c5551529112",
+  [eLuksoNetwork.testnet]: "0xc7f3aceBe05482eeCD668df1FCF1B59e6d14f77b",
+  hardhat: "0x0000000000000000000000000000000000000000"
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -165,11 +171,12 @@ export const POOL_ADMIN: Record<string, string> = {
   [eEthereumNetwork.tenderly]: ETHEREUM_SHORT_EXECUTOR,
   [eBitfinityNetwork.testnet]: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
   [eBitfinityNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
-  [eLuksoNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
-  [eLuksoNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eLuksoNetwork.main]: "0x963E8d56A2C8d9C1E138664ab9ABeE6ec234CF34",
+  [eLuksoNetwork.testnet]: "0x963E8d56A2C8d9C1E138664ab9ABeE6ec234CF34",
   [eTaraxaNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eMonadNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  hardhat: "0x963E8d56A2C8d9C1E138664ab9ABeE6ec234CF34"
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
@@ -182,42 +189,43 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
   [eBitfinityNetwork.testnet]: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
   [eBitfinityNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
-  [eLuksoNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
-  [eLuksoNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  [eLuksoNetwork.main]: "0x963E8d56A2C8d9C1E138664ab9ABeE6ec234CF34",
+  [eLuksoNetwork.testnet]: "0x963E8d56A2C8d9C1E138664ab9ABeE6ec234CF34",
   [eTaraxaNetwork.main]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eTaraxaNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
   [eMonadNetwork.testnet]: "0xb29423Ff11d409D6A9fe58b8E97437E4371356a5",
+  hardhat: "0x963E8d56A2C8d9C1E138664ab9ABeE6ec234CF34"
 };
 
 export const DEFAULT_NAMED_ACCOUNTS = {
   deployer: {
-    default: 0,
+    default: 6,
   },
   aclAdmin: {
-    default: 0,
+    default: 6,
   },
   emergencyAdmin: {
-    default: 0,
+    default: 6,
   },
   poolAdmin: {
-    default: 0,
+    default: 6,
   },
   addressesProviderRegistryOwner: {
-    default: 0,
+    default: 6,
   },
   treasuryProxyAdmin: {
     // default: 0,
-    default: 1,
+    default: 6,
   },
   incentivesProxyAdmin: {
     // default: 0,
-    default: 1,
+    default: 6,
   },
   incentivesEmissionManager: {
-    default: 0,
+    default: 6,
   },
   incentivesRewardsVault: {
-    default: 0,
+    default: 6,
   },
 };
 

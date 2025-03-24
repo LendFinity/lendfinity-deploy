@@ -39,7 +39,9 @@ const func: DeployFunction = async function ({
   }
 
   const { address: poolAddress } = await deployments.get(POOL_PROXY_ID);
-
+console.log({
+  wrappedNativeTokenAddress, deployer, poolAddress
+})
   await deploy("WrappedTokenGatewayV3", {
     from: deployer,
     args: [wrappedNativeTokenAddress, deployer, poolAddress],

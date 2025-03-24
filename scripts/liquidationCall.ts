@@ -20,15 +20,14 @@ async function main() {
 
 
   const userData = {
-    "user_id": "",
-    "max_collateralSymbol": "",
-    "max_borrowedSymbol": "",
-    "max_borrowedPrincipal": "",
-    "max_borrowedPriceInEth": "",
-    "max_collateralBonus": "",
-    "max_collateralPriceInEth": ""
+    "user_id": "0xF3c1a077B4965D2fcB93CCA95f586859C5960De5",
+    "max_collateralSymbol": "WBFT",
+    "max_borrowedSymbol": "ckUSDT",
+    "max_borrowedPrincipal": "11147",
+    "max_borrowedPriceInEth": "99870116",
+    "max_collateralBonus": 103045350893303730000,
+    "max_collateralPriceInEth": "549899"
 }
-
 
   const assetAddresses = {
     WBFT: "0x4B6bcCA9a8D707DaCA69485d14836779AeD947E5",

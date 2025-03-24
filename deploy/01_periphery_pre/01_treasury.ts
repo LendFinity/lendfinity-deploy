@@ -41,7 +41,7 @@ const func: DeployFunction = async function ({
 }: HardhatRuntimeEnvironment) {
   const { deploy, save } = deployments;
   const { deployer } = await getNamedAccounts();
-  const { ReserveFactorTreasuryAddress } = await loadPoolConfig(MARKET_NAME);
+  const { ReserveFactorTreasuryAddress, ReserveAssets, ReservesConfig } = await loadPoolConfig(MARKET_NAME);
 
   const network = (process.env.FORK || hre.network.name) as eNetwork;
   const treasuryAddress = getParamPerNetwork(

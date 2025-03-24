@@ -201,7 +201,7 @@ export const initReservesByHelper = async (
 
   // Deploy init reserves per chunks
   const chunkedSymbols = chunk(reserveSymbols, initChunks);
-  const chunkedInitInputParams = chunk(initInputParams, initChunks);
+  let chunkedInitInputParams = chunk(initInputParams, initChunks);
 
   const proxyArtifact = await hre.deployments.get(POOL_CONFIGURATOR_PROXY_ID);
   const configuratorArtifact = await hre.deployments.get(
@@ -220,12 +220,13 @@ export const initReservesByHelper = async (
 
   // const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei');
   // const gasLimit = 800000;
-
   for (
     let chunkIndex = 0;
     chunkIndex < chunkedInitInputParams.length;
     chunkIndex++
   ) {
+  console.log(chunkedInitInputParams[chunkIndex])
+
     const tx = await waitForTx(
       await configurator.initReserves(chunkedInitInputParams[chunkIndex])
     );

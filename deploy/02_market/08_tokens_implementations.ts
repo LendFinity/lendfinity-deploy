@@ -38,12 +38,15 @@ const func: DeployFunction = async function ({
 
   const poolAddress = await addressesProviderInstance.getPool();
 
+
   const aTokenArtifact = await deploy(ATOKEN_IMPL_ID, {
     contract: "AToken",
     from: deployer,
     args: [poolAddress],
     ...COMMON_DEPLOY_PARAMS,
   });
+
+
 
   const aToken = (await hre.ethers.getContractAt(
     aTokenArtifact.abi,

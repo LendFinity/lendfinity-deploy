@@ -62,8 +62,8 @@ export const getAlchemyKey = (net: eNetwork) => {
 };
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
-  [eLuksoNetwork.main]: `https://mainnet.bitfinity.network/`,
-  [eLuksoNetwork.testnet]: `https://testnet.bitfinity.network/`,
+  [eLuksoNetwork.main]: `https://rpc.mainnet.lukso.network`,
+  [eLuksoNetwork.testnet]: `https://rpc.testnet.lukso.network`,
   [eTaraxaNetwork.main]: `https://rpc.mainnet.taraxa.io`,
   [eTaraxaNetwork.testnet]: `https://rpc.testnet.taraxa.io`,
   [eMonadNetwork.testnet]: `https://testnet-rpc.monad.xyz`,
@@ -124,6 +124,8 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eBaseNetwork.base]: true,
   [eBitfinityNetwork.main]: true,
   [eTaraxaNetwork.main]: true,
+  [eLuksoNetwork.main]: true,
+  [eLuksoNetwork.testnet]: true,
 };
 
 const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {
@@ -131,6 +133,8 @@ const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {
   [eBaseNetwork.baseGoerli]: 8000000000,
   // [eBitfinityNetwork.main]: 8000000000,
   [eBitfinityNetwork.main]: 343597383681,
+  [eLuksoNetwork.main]: 343597383681,
+  [eLuksoNetwork.testnet]: 8000000000,
 };
 
 export const buildForkConfig = ():
@@ -201,6 +205,7 @@ export const hardhatNetworkSettings = {
   saveDeployments: true,
   allowUnlimitedContractSize: true,
   tags: ["local"],
+  // live: true,
   accounts:
     FORK && !!MNEMONIC
       ? {
